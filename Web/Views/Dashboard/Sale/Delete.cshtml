@@ -1,0 +1,11 @@
+﻿model Data.Client
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+Esta seguro que desea eliminar la venta del Cliente @Model.Client?
+
+<a href="/Sale/DeleteConfirmation/@Model.Id" class="waves-effect waves-light btn col s6">Eliminar</a>
+<a href="/Sale/Index" class="waves-effect waves-light btn col s6">Cancelar</a>
+
+

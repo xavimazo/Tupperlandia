@@ -1,0 +1,148 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+
+@font-face {
+    font-family: Tupperware-Handwriting;
+    src: url("../fonts/tupperware_handwriting-webfont.eot");
+    src: url("../fonts/tupperware_handwriting-webfont.woff2") format('woff2'), url("../fonts/tupperware_handwriting-webfont.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal
+}
+
+
+.card .card-title-store {
+    font-size: 15px;
+    font-weight: 300;
+    text-overflow: ellipsis;
+}
+
+.card .card-title2 {
+    display: block;
+    line-height: 32px;
+    margin-bottom: 0px;
+}
+
+.btn-floating-B {
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    line-height: 27px;
+    padding: 13px;
+    background-color: #26a69a;
+    border-radius: 50%;
+    -webkit-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: transform ease-in-out .2s;
+    box-shadow: none;
+}
+
+    .btn-floating-B:hover {
+        transform: rotate(180deg);
+        box-shadow: none;
+    }
+
+.right-fab {
+    position: absolute;
+    right: -25px;
+    bottom: calc(50% - 25px);
+}
+
+.Special-Title{
+    height: 50px;
+}
+
+.card-panel{
+    align-items: center;
+}
+
+.page-footer .footer-copyright {
+    min-height: 10px;
+}
+
+.card-stacked{
+    color: black;
+}
+
+.card-content p{
+    font-weight: 300;
+}
+
+#dropdownTienda li a {
+    color: #000000;
+}
+
+#Tupperware-logo-black {
+    padding: 15px;
+}
+
+.handwritten {
+    font-family: Tupperware-Handwriting;
+}
+
+nav ul a,
+nav .brand-logo {
+    color: #000000;
+}
+nav {
+    opacity: 0.85;
+}
+
+p {
+    line-height: 2rem;
+}
+
+.button-collapse {
+    color: #26a69a;
+}
+
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255,255,255,.9);
+}
+
+    .parallax-container .section {
+        width: 100%;
+    }
+
+@media only screen and (max-width : 992px) {
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+
+    #index-banner .section {
+        top: 10%;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+    #index-banner .section {
+        top: 0;
+    }
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+    .icon-block .material-icons {
+        font-size: 35px;
+    }
+
+footer.page-footer {
+    margin: 0;
+}

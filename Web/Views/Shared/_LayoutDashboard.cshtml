@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/Content/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/Content/nouislider.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="white" role="navigation">
+            <div class="nav-wrapper">
+                <img src="~/Content/tupperware-logo-black.png" id="Tupperware-logo-black" href="#">
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="~/Dashboard/Index#">Estadisticas</a></li>
+                    <li><a class="dropdown-button" href="~/Client" data-activates="dropdownClient">Clientes<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="~/Product" data-activates="dropdownProduct">Productos<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="~/Stock" data-activates="dropdownStock">Stock<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="~/Sale" data-activates="dropdownSale">Ventas<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+    </div>
+    <ul id="dropdownClient" class="dropdown-content">
+        <li><a href="~/Client/Create">Nuevo cliente</a></li>
+    </ul>
+    <ul id="dropdownProduct" class="dropdown-content">
+        <li><a href="~/Product/Create">Nuevo producto</a></li>
+    </ul>
+    <ul id="dropdownStock" class="dropdown-content">
+        <li><a href="~/Stock/Create">Agregar stock</a></li>
+    </ul>
+    <ul id="dropdownSale" class="dropdown-content">
+        <li><a href="~/Sale/Create">Nueva venta</a></li>
+    </ul>
+    @RenderBody()
+    <footer class="page-footer teal">
+        <br />
+        <br />
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/materialize.js"></script>
+    <script src="~/Scripts/init.js"></script>
+    <script src="~/Scripts/nouislider.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".dropdown-button").dropdown({
+                constrainWidth: false,
+                belowOrigin: true
+            });
+        });
+    </script>
+    @if (Session["Message"] != null)
+    {
+        <script>
+            Materialize.toast("@Session["Message"].ToString()" , 4000)
+        </script>
+        Session["Message"] = null;
+    }
+    @RenderSection("scripts", required: false)
+</body>
+</html>
