@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tupperware_e-commerce", "Tupperware_e-commerce\Tupperware_e-commerce.csproj", "{3A2750AD-DBB3-4E88-99EB-6DF644F80A50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tupperware_e-commerce", "Web\Tupperware_e-commerce.csproj", "{3A2750AD-DBB3-4E88-99EB-6DF644F80A50}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{16CD9A38-E3FE-4F9D-995E-99D3CE7FEC6B}"
 EndProject
