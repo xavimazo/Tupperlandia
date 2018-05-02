@@ -1,0 +1,31 @@
+﻿@model IList<Data.Discount>
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="container">
+    <table class="highlight centered">
+        <br />
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Porcentaje</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var discount in Model)
+            {
+                <tr>
+                    <td>@discount.Id</td>
+                    <td>@discount.percentage</td>
+                    <td><a href="/Discount/Edit/@discount.Id"><i class="small material-icons">mode_edit</i></a></td>
+                    <td><a href="/Discount/Delete/@discount.Id"><i class="small material-icons">delete</i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

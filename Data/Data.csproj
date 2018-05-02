@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="Discount.cs" />
     <Compile Include="Migrations\201803170322282_original tables.cs" />
     <Compile Include="Migrations\201803170322282_original tables.Designer.cs">
       <DependentUpon>201803170322282_original tables.cs</DependentUpon>
@@ -134,7 +135,24 @@
     <Compile Include="Migrations\201804292347178_addingdescriptions.Designer.cs">
       <DependentUpon>201804292347178_addingdescriptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805012054155_adding publication statuses.cs" />
+    <Compile Include="Migrations\201805012054155_adding publication statuses.Designer.cs">
+      <DependentUpon>201805012054155_adding publication statuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805012137408_status publication.cs" />
+    <Compile Include="Migrations\201805012137408_status publication.Designer.cs">
+      <DependentUpon>201805012137408_status publication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805012300402_adding discount.cs" />
+    <Compile Include="Migrations\201805012300402_adding discount.Designer.cs">
+      <DependentUpon>201805012300402_adding discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805020004350_status.cs" />
+    <Compile Include="Migrations\201805020004350_status.Designer.cs">
+      <DependentUpon>201805020004350_status.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PublicationStatus.cs" />
     <Compile Include="Sale.cs" />
     <Compile Include="TupperwareContext.cs" />
     <Compile Include="Product.cs" />
@@ -209,6 +227,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804292347178_addingdescriptions.resx">
       <DependentUpon>201804292347178_addingdescriptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805012054155_adding publication statuses.resx">
+      <DependentUpon>201805012054155_adding publication statuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805012137408_status publication.resx">
+      <DependentUpon>201805012137408_status publication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805012300402_adding discount.resx">
+      <DependentUpon>201805012300402_adding discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805020004350_status.resx">
+      <DependentUpon>201805020004350_status.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

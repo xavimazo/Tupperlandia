@@ -36,22 +36,28 @@
                     @Html.EditorFor(x => x.Stock.Price)
                     @Html.LabelFor(x => x.Stock.Price)
                 </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.State)
-                    @Html.LabelFor(x => x.Stock.State)
+                <div class="col s3">
+                    @Html.LabelFor(x => x.Stock.StatusId)
+                    @Html.DropDownListFor(x => x.Stock.StatusId, Model.PublicationStatus.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.Status }), new { @class = "browser-default" })
                 </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.CantidadStock)
-                    @Html.LabelFor(x => x.Stock.CantidadStock)
+                <div class="col s3">
+                    @if (Model.Stock.Status.Status.Contains("Descuento"))
+        {
+            @Html.LabelFor(x => x.Stock.DiscountId)
+            @Html.DropDownListFor(x => x.Stock.DiscountId, Model.Discounts.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.percentage }), new { @class = "browser-default" })
+}
+                    <div class="input-field col s3">
+                        @Html.EditorFor(x => x.Stock.CantidadStock)
+                        @Html.LabelFor(x => x.Stock.CantidadStock)
+                    </div>
+                    <div class="input-field col s3">
+                        @Html.EditorFor(x => x.Stock.Image)
+                        @Html.LabelFor(x => x.Stock.Image)
+                    </div>
+                    <div class="input-field col s3">
+                        <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">mode_edit</i>Editar</button>
+                    </div>
                 </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.Image)
-                    @Html.LabelFor(x => x.Stock.Image)
-                </div>
-                <div class="input-field col s3">
-                    <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">mode_edit</i>Editar</button>
-                </div>
-            </div>
-        </form>
+</form>
     </div>
 </div>

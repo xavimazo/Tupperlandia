@@ -24,8 +24,6 @@ namespace Data
         public string Line { get; set; }
         [Display(Name = "Precio")]
         public decimal Price { get; set; }
-        [Display(Name = "Estado")]
-        public string State { get; set; }
         [Display(Name = "Stock")]
         public int CantidadStock { get; set; }
         [Display(Name = "Imagen URL")]
@@ -33,5 +31,9 @@ namespace Data
 
         public int? ProductId { get; set; }
         public virtual Product Product { get; set; }
+        public int? StatusId { get; set; }
+        public virtual PublicationStatus Status { get; set; }
+        public int? DiscountId { get; set; }
+        public virtual Discount percentage { get; set;}
     }
 }

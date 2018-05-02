@@ -26,6 +26,8 @@ namespace Data
         public virtual DbSet<VariationType> VariationTypes { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
+        public virtual DbSet<PublicationStatus> PublicationStatuses { get; set; }
+        public virtual DbSet<Discount> Discounts { get; set; }
     }
 
     //public class MyEntity

@@ -35,9 +35,9 @@
                     @Html.EditorFor(x => x.Stock.Price)
                     @Html.LabelFor(x => x.Stock.Price)
                 </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.State)
-                    @Html.LabelFor(x => x.Stock.State)
+                <div class="col s3">
+                    @Html.LabelFor(x => x.Stock.StatusId)
+                    @Html.DropDownListFor(x => x.Stock.StatusId, Model.PublicationStatus.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.Status }), new { @class = "browser-default" })
                 </div>
                 <div class="input-field col s3">
                     @Html.EditorFor(x => x.Stock.CantidadStock)

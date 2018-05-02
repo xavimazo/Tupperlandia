@@ -16,6 +16,7 @@
             <th>Linea</th>
             <th>Precio</th>
             <th>Estado</th>
+            <th>Descuento</th>
             <th>Stock</th>
             <th>Imagen</th>
             <th>Editar</th>
@@ -34,8 +35,9 @@
                 <td>@stock.Categorie</td>
                 <td>@stock.Line</td>
                 <td>@stock.Price</td>
-                <Td>@stock.State</Td>
-                <Td>@stock.CantidadStock</Td>
+                <td>@(stock.Status != null ? stock.Status.Status : "")</td>
+                <td>@stock.percentage</td>
+                <td>@stock.CantidadStock</td>
                 <td>@stock.Image</td>
                 <td><a href="/Stock/Edit/@stock.Id"><i class="small material-icons">mode_edit</i></td>
                 <td><a href="/Stock/Delete/@stock.Id"><i class="small material-icons">delete</i></td>

@@ -1,0 +1,9 @@
+﻿@model Data.Discount
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+Esta seguro que desea eliminar el Cliente @Model.percentage?
+
+<a href="/Discount/DeleteConfirmation/@Model.Id" class="waves-effect waves-light btn col s6">Eliminar</a>
+<a href="/Discount/Index" class="waves-effect waves-light btn col s6">Cancelar</a>

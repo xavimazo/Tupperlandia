@@ -21,6 +21,8 @@
                     <li><a class="dropdown-button" href="~/Product" data-activates="dropdownProduct">Productos<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-button" href="~/Stock" data-activates="dropdownStock">Stock<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li><a class="dropdown-button" href="~/Sale" data-activates="dropdownSale">Ventas<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="~/PublicationStatus" data-activates="dropdownStatus">Estados<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="dropdown-button" href="~/Discount" data-activates="dropdownDiscount">Descuentos<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
@@ -37,6 +39,12 @@
     </ul>
     <ul id="dropdownSale" class="dropdown-content">
         <li><a href="~/Sale/Create">Nueva venta</a></li>
+    </ul>
+    <ul id="dropdownStatus" class="dropdown-content">
+        <li><a href="~/PublicationStatus/Create">Nuevo estado</a></li>
+    </ul>
+    <ul id="dropdownDiscount" class="dropdown-content">
+        <li><a href="~/Discount/Create">Nuevo descuento</a></li>
     </ul>
     @RenderBody()
     <footer class="page-footer teal">
