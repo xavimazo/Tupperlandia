@@ -3,45 +3,54 @@
 }
 <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
-        <div class="container">
-            <div class="section">
-                <div class="col s12">
-                    <div class="card  horizontal">
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <span class="card-title">
-                                    Estadisticas del mes actual
-                                </span>
-                                <div class="row">
-                                    <div class="col s2">
-                                        <span class="card-title2">
-                                            CANTIDAD DE GANANCIA
-                                            CANTIDAD DE VENTAS
-                                            CANTIDAD DE CLIENTES
-                                            CANTIDAD DE VISITAS
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <br />
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="dashboardContainer">
+            <div class="row">
+                <div class="col s2">
+                    <div class="card-panel teal">
+                        <span class="white-text">
+                            Nueva ventas Mensuales / ...
+                        </span>
+                    </div>
+                </div>
+                <div class="col s2">
+                    <div class="card-panel teal">
+                        <span class="white-text">
+                            Nuevos clientes mensuales / ....
+                        </span>
+                    </div>
+                </div>
+                <div class="col s2">
+                    <div class="card-panel teal">
+                        <span class="white-text">
+                            Vendido en el dia
+                        </span>
+                    </div>
+                </div>
+                <div class="col s2">
+                    <div class="card-panel teal">
+                        <span class="white-text">
+                            Ingreso mensual
+                        </span>
+                    </div>
+                </div>
+                <div class="col s2">
+                    <div class="card-panel teal">
+                        <span class="white-text">
+                            Otra estadistica
+                        </span>
+                    </div>
+                </div>
+                <div class="col s2">
+                    <div class="card-panel teal">
+                        <span class="white-text">
+                            Vendido en el dia
+                        </span>
+                    </div>
+                </div>
+                <div class="col s8">
+                    <div class="card-panel teal">                     
+                        <canvas id="myChart"></canvas>             
+                        @*<canvas id="chart_0" height="400vw" width="800vw"></canvas>*@
                     </div>
                 </div>
             </div>
@@ -49,3 +58,65 @@
     </div>
     <div class="parallax"><img src="~/Content/SpecialFeatures_Background1.png" alt="Unsplashed background img 1" style="transform: translate3d(-50%, 404.594px, 0px); opacity: 1;"></div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    let massPopChar = new Chart(myChart, {
+        type: 'line', //bar, gorizontalBar, pie, line, doughnut, ett
+        data: {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            datasets: [{
+                label: 'Venta mensual',
+                data: [
+                    5000,
+                    6000,
+                    9000,
+                    10000,
+                    10500,
+                    11000,
+                    11000,
+                    11000,
+                    11500,
+                    12000,
+                    13500,
+                    16200
+                ]
+                label: 'Venta productos',
+                data: [
+                    4000,
+                    5000,
+                    8000,
+                    9000,
+                    9500,
+                    10000,
+                    10000,
+                    10000,
+                    10500,
+                    11000,
+                    12500,
+                    15200
+                ]
+            }]
+            //datasets: [{
+            //    label: 'Venta productos',
+            //    data: [
+            //        4000,
+            //        5000,
+            //        8000,
+            //        9000,
+            //        9500,
+            //        10000,
+            //        10000,
+            //        10000,
+            //        10500,
+            //        11000,
+            //        12500,
+            //        15200
+            //    ]
+            //}]
+        },
+        options: {}
+    });
+</script>

@@ -7,6 +7,13 @@
  */
 
 
+.dashboardContainer {
+    margin-right: 150px;
+    margin-left: 80px;
+    width: 200px;
+}
+
+
 @font-face {
     font-family: Tupperware-Handwriting;
     src: url("../fonts/tupperware_handwriting-webfont.eot");

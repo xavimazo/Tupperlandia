@@ -42,10 +42,10 @@
                 </div>
                 <div class="col s3">
                     @if (Model.Stock.Status.Status.Contains("Descuento"))
-        {
-            @Html.LabelFor(x => x.Stock.DiscountId)
-            @Html.DropDownListFor(x => x.Stock.DiscountId, Model.Discounts.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.percentage }), new { @class = "browser-default" })
-}
+                     {
+                        @Html.LabelFor(x => x.Stock.DiscountId)
+                        @Html.DropDownListFor(x => x.Stock.DiscountId, Model.Discounts.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.percentage }), new { @class = "browser-default" })
+                     }
                     <div class="input-field col s3">
                         @Html.EditorFor(x => x.Stock.CantidadStock)
                         @Html.LabelFor(x => x.Stock.CantidadStock)
