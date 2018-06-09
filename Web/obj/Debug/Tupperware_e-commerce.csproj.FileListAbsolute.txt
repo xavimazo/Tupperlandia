@@ -131,10 +131,6 @@ C:\Users\xavi_\Documents\Tupperware_e-commerce\Tupperware_e-commerce\bin\EntityF
 C:\Users\xavi_\Documents\Tupperware_e-commerce\Tupperware_e-commerce\bin\EntityFramework.dll
 C:\Users\xavi_\Documents\Tupperware_e-commerce\Tupperware_e-commerce\bin\EntityFramework.SqlServer.dll
 C:\Users\xavi_\Documents\Tupperware_e-commerce\Tupperware_e-commerce\bin\EntityFramework.SqlServer.xml
-C:\Users\xavi_\Documents\Tupperlandia\Web\obj\Debug\Tupperware_e-commerce.csprojResolveAssemblyReference.cache
-C:\Users\xavi_\Documents\Tupperlandia\Web\obj\Debug\Tupperware_e-commerce.csproj.CoreCompileInputs.cache
-C:\Users\xavi_\Documents\Tupperlandia\Web\obj\Debug\Tupperware_e-commerce.dll
-C:\Users\xavi_\Documents\Tupperlandia\Web\obj\Debug\Tupperware_e-commerce.pdb
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\ApplicationInsights.config
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\Tupperware_e-commerce.dll.config
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\Tupperware_e-commerce.dll
@@ -168,11 +164,11 @@ C:\Users\xavi_\Documents\Tupperlandia\Web\bin\EntityFramework.SqlServer.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\System.Web.Helpers.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\System.Web.Mvc.xml
-C:\Users\xavi_\Documents\Tupperlandia\Web\bin\System.Web.Optimization.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\System.Web.Razor.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\System.Web.WebPages.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\System.Web.WebPages.Deployment.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\xavi_\Documents\Tupperlandia\Web\bin\System.Web.Optimization.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\Antlr3.Runtime.pdb
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\Newtonsoft.Json.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\Microsoft.ApplicationInsights.xml
@@ -180,3 +176,7 @@ C:\Users\xavi_\Documents\Tupperlandia\Web\bin\Microsoft.AI.DependencyCollector.x
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\xavi_\Documents\Tupperlandia\Web\bin\Microsoft.AI.Web.xml
+C:\Users\xavi_\Documents\Tupperlandia\Web\obj\Debug\Tupperware_e-commerce.csprojResolveAssemblyReference.cache
+C:\Users\xavi_\Documents\Tupperlandia\Web\obj\Debug\Tupperware_e-commerce.csproj.CoreCompileInputs.cache
+C:\Users\xavi_\Documents\Tupperlandia\Web\obj\Debug\Tupperware_e-commerce.dll
+C:\Users\xavi_\Documents\Tupperlandia\Web\obj\Debug\Tupperware_e-commerce.pdb
