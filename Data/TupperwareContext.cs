@@ -28,6 +28,7 @@ namespace Data
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<PublicationStatus> PublicationStatuses { get; set; }
         public virtual DbSet<Discount> Discounts { get; set; }
+        public virtual DbSet<Dispatch> Dispatches { get; set; }
     }
 
     //public class MyEntity

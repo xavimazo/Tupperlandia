@@ -5,6 +5,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Tupperware_e_commerce.Models;
+using System.Data.Entity;
 
 namespace Tupperware_e_commerce.Controllers
 {
@@ -14,7 +16,20 @@ namespace Tupperware_e_commerce.Controllers
         public ActionResult Create()
         {
             var model = new Sale();
-            return View("../Dashboard/Sale/Create", model);
+            var viewModel = new SaleViewModel
+            {
+                Sale = model
+            };
+
+            using (var db = new TupperwareContext())
+            {
+                viewModel.Stock = db.Stock.ToList();
+                viewModel.Client = db.Clients.ToList();
+                viewModel.Products = db.Products.ToList();
+                viewModel.Dispatch = db.Dispatches.ToList();
+
+            }
+                return View("../Dashboard/Sale/Create", viewModel);
         }
 
         [HttpPost]
@@ -55,8 +70,30 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var sale = db.Sales.Find(id);
-                return View("../Dashboard/Client/Edit");
+                var sale = db.Sales
+                    .Include(s => s.Client.NombreDelCliente)
+                    .Include(s => s.Client.Calle)
+                    .Include(s => s.Client.ContactoCliente)
+                    .Include(s => s.Dispatch.DispatchType)
+                    .Include(s => s.Product.Name)
+                    .Include(s => s.Stock.Capacidad)
+                    .Include(s => s.Stock.Color)
+                    .FirstOrDefault(s => s.Id == id);
+
+                var Stock = db.Stock.ToList();
+                var Client = db.Clients.ToList();
+                var Products = db.Products.ToList();
+                var Dispatch = db.Dispatches.ToList();
+
+                var viewModel = new SaleViewModel
+                {
+                    Stock = Stock,
+                    Products = Products,
+                    Client = Client,
+                    Dispatch = Dispatch
+                };
+
+                return View("../Dashboard/Client/Edit", viewModel);
             }
         }
 

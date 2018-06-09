@@ -9,13 +9,14 @@
             <tr>
                 <th>ID</th>
                 <th>Nombre del cliente</th>
+                <th>Contacto</th>
                 <th>Calle</th>
-                <th>Localidad</th>
                 <th>Numeracion</th>
                 <th>Departamento</th>
                 <th>Piso</th>
-                <th>Contacto</th>
+                <th>Localidad</th>
                 <th>Email</th>
+                <th>Social</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
@@ -23,23 +24,21 @@
         <tbody>
             @foreach (var client in Model)
             {
-                <tr>
-                    <td>@client.Id</td>
-                    <td>@client.NombreDelCliente</td>
-                    <td>@client.Calle</td>
-                    <td>@client.Localidad</td>
-                    <td>@client.Numeracion</td>
-                    <td>@client.Departamento</td>
-                    <td>@client.Piso</td>
-                    <td>@client.ContactoCliente</td>
-                    <td>@client.EmailCliente</td>
-                    <td><a href="/Client/Edit/@client.Id"><i class="small material-icons">mode_edit</i></a></td>
-                    <td><a href="/Client/Delete/@client.Id"><i class="small material-icons">delete</i></a></td>
-                </tr>
+            <tr>
+                <td>@client.Id</td>
+                <td>@client.NombreDelCliente</td>
+                <td>@client.ContactoCliente</td>
+                <td>@client.Calle</td>
+                <td>@client.Numeracion</td>
+                <td>@client.Departamento</td>
+                <td>@client.Piso</td>
+                <td>@client.Localidad</td>
+                <td>@client.EmailCliente</td>
+                <td>@client.SocialClient</td>
+                <td><a href="/Client/Edit/@client.Id"><i class="small material-icons">mode_edit</i></a></td>
+                <td><a href="/Client/Delete/@client.Id"><i class="small material-icons">delete</i></a></td>
+            </tr>
             }
         </tbody>
     </table>
 </div>
-
-
-

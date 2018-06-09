@@ -84,3 +84,6 @@ C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.addingpubli
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.statuspublication.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.addingdiscount.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.status.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.AddingSocialClient.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.newpropertiesinSales.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.addinginfo.resources

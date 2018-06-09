@@ -7,10 +7,16 @@
         <br />
         <thead>
             <tr>
-                <th>Cliente</th>
-                <th>Producto y capacidad</th>
-                <th>Cantidad</th>
                 <th>Fecha</th>
+                <th>Pago del Cliente</th>
+                <th>Cliente</th>
+                <th>Direccion</th>
+                <th>Producto</th>
+                <th>Capacidad</th>
+                <th>Color</th>
+                <th>Cantidad</th>
+                <th>Despacho</th>
+                <th>Contacto Cliente</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
@@ -18,11 +24,17 @@
         <tbody>
             @foreach (var sale in Model)
             {
-                <tr>
+                <tr>    
+                    <td>@sale.SaleDate</td>
+                    <th>@sale.SaleAmount</th>
                     <td>@sale.Client</td>
-                    <td>@sale.ProductAndCapacity</td>
-                    <td>@sale.Units</td>
-                    <td>@sale.Date</td>
+                    <td>@sale.Client.Calle</td>@*Concatenar calle + Numero + Departamente + Piso*@
+                    <td>@sale.Product.Name</td>
+                    <td>@sale.Stock.Capacidad</td>
+                    <td>@sale.Stock.Color</td>
+                    <td>@sale.SaleUnits</td>
+                    <td>@sale.Dispatch.DispatchType</td>
+                    <td>@sale.Client.ContactoCliente</td>
                     <td><a href="/Sale/Edit/@sale.Id"><i class="small material-icons">mode_edit</i></td>
                     <td><a href="/Sale/Delete/@sale.Id"><i class="small material-icons">delete</i></td>
                 </tr>

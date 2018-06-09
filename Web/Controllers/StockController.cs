@@ -25,6 +25,7 @@ namespace Tupperware_e_commerce.Controllers
             {
                 viewModel.Products = db.Products.ToList();
                 viewModel.PublicationStatus = db.PublicationStatuses.ToList();
+                viewModel.Discounts = db.Discounts.ToList();
             }
 
             return View("../Dashboard/Stock/Create", viewModel);
@@ -79,8 +80,7 @@ namespace Tupperware_e_commerce.Controllers
                     Products = products,
                     PublicationStatus = publicationStatus,
                     Discounts = discounts
-                    };
-
+                };
                 return View("../Dashboard/Stock/Edit", viewModel);
             }
         }

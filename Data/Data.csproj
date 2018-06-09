@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="Discount.cs" />
+    <Compile Include="Dispatch.cs" />
     <Compile Include="Migrations\201803170322282_original tables.cs" />
     <Compile Include="Migrations\201803170322282_original tables.Designer.cs">
       <DependentUpon>201803170322282_original tables.cs</DependentUpon>
@@ -151,6 +152,18 @@
     <Compile Include="Migrations\201805020004350_status.Designer.cs">
       <DependentUpon>201805020004350_status.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806091741543_Adding Social Client.cs" />
+    <Compile Include="Migrations\201806091741543_Adding Social Client.Designer.cs">
+      <DependentUpon>201806091741543_Adding Social Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806091812030_new properties in Sales.cs" />
+    <Compile Include="Migrations\201806091812030_new properties in Sales.Designer.cs">
+      <DependentUpon>201806091812030_new properties in Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806092147185_adding info.cs" />
+    <Compile Include="Migrations\201806092147185_adding info.Designer.cs">
+      <DependentUpon>201806092147185_adding info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PublicationStatus.cs" />
     <Compile Include="Sale.cs" />
@@ -239,6 +252,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805020004350_status.resx">
       <DependentUpon>201805020004350_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806091741543_Adding Social Client.resx">
+      <DependentUpon>201806091741543_Adding Social Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806091812030_new properties in Sales.resx">
+      <DependentUpon>201806091812030_new properties in Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806092147185_adding info.resx">
+      <DependentUpon>201806092147185_adding info.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
