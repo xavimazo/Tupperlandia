@@ -3,54 +3,132 @@
 }
 <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
-        <div class="dashboardContainer">
+        <div class="xContainer">
             <div class="row">
                 <div class="col s2">
-                    <div class="card-panel teal">
-                        <span class="white-text">
-                            Nueva ventas Mensuales / ...
+                    <div class="card-panel">
+                        <span class="black-text">
+                            client + mes pasado / mes actual
                         </span>
                     </div>
                 </div>
                 <div class="col s2">
-                    <div class="card-panel teal">
-                        <span class="white-text">
-                            Nuevos clientes mensuales / ....
+                    <div class="card-panel">
+                        <span class="black-text">
+                            prod + mes pasado / mes actual
                         </span>
                     </div>
                 </div>
                 <div class="col s2">
-                    <div class="card-panel teal">
-                        <span class="white-text">
-                            Vendido en el dia
+                    <div class="card-panel">
+                        <span class="black-text">
+                            Suma ganan mes pas / mes actual
                         </span>
                     </div>
                 </div>
                 <div class="col s2">
-                    <div class="card-panel teal">
-                        <span class="white-text">
-                            Ingreso mensual
+                    <div class="card-panel">
+                        <span class="black-text">
+                            Ventas ML mes pas / mes actual
                         </span>
                     </div>
                 </div>
                 <div class="col s2">
-                    <div class="card-panel teal">
-                        <span class="white-text">
-                            Otra estadistica
+                    <div class="card-panel">
+                        <span class="black-text">
+                            Vental FB mes pas / mes actual
                         </span>
                     </div>
                 </div>
                 <div class="col s2">
-                    <div class="card-panel teal">
-                        <span class="white-text">
-                            Vendido en el dia
+                    <div class="card-panel">
+                        <span class="black-text">
+                            Ventas CONT mes pas / actual
                         </span>
                     </div>
                 </div>
-                <div class="col s8">
-                    <div class="card-panel teal">                     
-                        <canvas id="myChart"></canvas>             
-                        @*<canvas id="chart_0" height="400vw" width="800vw"></canvas>*@
+                <div class="col s6">
+                    <div class="card-panel">
+                        <canvas id="MonthMoneyChart"></canvas>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="card-panel">
+                        <canvas id="MonthProductsChart"></canvas>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="card-panel">
+                        <h6 class="black-text">
+                            Ventas abiertas
+                        </h6>
+                        <hr />
+                        @*<table class="black-text centered">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Color</th>
+                            <th>Finalizar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01/01/2018</td>
+                            <td>Juan Perez</td>
+                            <td>Cristalwave</td>
+                            <td>3</td>
+                            <td>Rojo</td>
+                            <td>Checkbox</td>
+                        </tr>
+                        <tr>
+                            <td>01/01/2018</td>
+                            <td>Juan Perez</td>
+                            <td>Cristalwave</td>
+                            <td>3</td>
+                            <td>Rojo</td>
+                            <td>Checkbox</td>
+                        </tr>
+                        <tr>
+                            <td>01/01/2018</td>
+                            <td>Juan Perez</td>
+                            <td>Cristalwave</td>
+                            <td>3</td>
+                            <td>Rojo</td>
+                            <td>Checkbox</td>
+                        </tr>
+                      </tbody>
+                </table>*@
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="card-panel">                       
+                            <h6 class="black-text">
+                                Vendido en el dia
+                            </h6>
+                        <hr />
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card-panel">
+                        <canvas id="productsChart"></canvas>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card-panel">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card-panel">
+                        <canvas id="mySecondChart"></canvas>
+                    </div>
+                </div>
+                <div class="col s2">
+                    <div class="card-panel">
+                        <canvas id="myPieChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -61,14 +139,274 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 <script>
-    let myChart = document.getElementById('myChart').getContext('2d');
+    let MonthMoneyChart = document.getElementById('MonthMoneyChart').getContext('2d');
+    //Global options
+    Chart.defaults.global.defaultFontFamily = 'Roboto';
+    //Chart.defaults.global.defaultFontSize = '11';
+    Chart.defaults.global.defaultFontColor = '#000000';
+    let mmc = new Chart(MonthMoneyChart, {
+        type: 'line', //bar, gorizontalBar, pie, line, doughnut, ett
+        data: {
+            labels: ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', ],
+            datasets: [{
+                label: 'Productos vendidos',
+                data: [
+                    5,5,6,8,7,4,2,3,6,5,1,8,5,2,3,6,9,5,4,7,1,2,5,8,4,6,9,8,5,3
+                ],
+                backgrounColor: [
+                    'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(255,99,132,0.6)'
+            }, {
+                label: 'Nuevos clientes',
+                data: [
+                    4,5,6,9,8,2,3,6,5,1,7,0,2,5,3,1,4,2,3,5,8,5,9,7,1,2,5,4,2,3
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(54,162,235,0.6)'
+            }, {
+                label: 'Stock total',
+                data: [
+                    5,8,7,4,5,2,3,6,9,8,4,4,7,5,8,2,1,6,3,5,2,9,8,5,4,7,8,5,2,1
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(255,206,86,0.6)'
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Estadisticas Ventas - Productos',
+                fonSize: 15
 
+            }
+        }
+    });
+</script>
+@*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+<script>
+    let MonthProductsChart = document.getElementById('MonthProductsChart').getContext('2d');
+    //Global options
+    Chart.defaults.global.defaultFontFamily = 'Roboto';
+    //Chart.defaults.global.defaultFontSize = '11';
+    Chart.defaults.global.defaultFontColor = '#000000';
+    let MPC = new Chart(MonthProductsChart, {
+        type: 'line', //bar, gorizontalBar, pie, line, doughnut, ett
+        data: {
+            labels: ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1',],
+            datasets: [{
+                label: 'Ganancia bruta',
+                data: [
+                    5, 5, 6, 8, 7, 4, 2, 3, 6, 5, 1, 8, 5, 2, 3, 6, 9, 5, 4, 7, 1, 2, 5, 8, 4, 6, 9, 8, 5, 3
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(75,192,192,0.6)'
+            }, {
+                label: 'Diferencia',
+                data: [
+                    4, 5, 6, 9, 8, 2, 3, 6, 5, 1, 7, 0, 2, 5, 3, 1, 4, 2, 3, 5, 8, 5, 9, 7, 1, 2, 5, 4, 2, 3
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(153,102,255,0.6)'
+            }, {
+                label: 'Gastos',
+                data: [
+                    5, 8, 7, 4, 5, 2, 3, 6, 9, 8, 4, 4, 7, 5, 8, 2, 1, 6, 3, 5, 2, 9, 8, 5, 4, 7, 8, 5, 2, 1
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(255,159,64,0.6)'
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Estadisticas mensuales generales',
+                fonSize: 15
+
+            }
+        }
+    });
+</script>
+@*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+<script>
+    let productsChart = document.getElementById('productsChart').getContext('2d');
+    //Global options
+    Chart.defaults.global.defaultFontFamily = 'Roboto';
+    //Chart.defaults.global.defaultFontSize = '11';
+    Chart.defaults.global.defaultFontColor = '#000000';
+    //Chart.canvas.parentNode.style.height = '128px';
+    let ProductsChart = new Chart(productsChart, {
+        type: 'bar', //bar, gorizontalBar, pie, line, doughnut, ett
+        data: {
+            labels: ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1',
+                '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1',
+                '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'],
+            datasets: [{
+                label: 'Unidades en stock',
+                data: [
+                    2,
+                    3,
+                    4,
+                    1,
+                    5,
+                    2,
+                    3,
+                    6,
+                    7,
+                    8,
+                    2,
+                    1
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(255,99,132,0.6)'
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Stock de productos',
+                fonSize: 15
+            },
+            layout: {
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0
+                }
+            }
+        }
+    });
+</script>
+@*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+<script>
+    let myPieChart = document.getElementById('myPieChart').getContext('2d');
+    //Global options
+    Chart.defaults.global.defaultFontFamily = 'Roboto';
+    //Chart.defaults.global.defaultFontSize = '11';
+    Chart.defaults.global.defaultFontColor = '#000000';
+    //Chart.canvas.parentNode.style.height = '128px';
+    let SocialChart = new Chart(myPieChart, {
+        type: 'pie', //bar, gorizontalBar, pie, line, doughnut, ett
+        data: {
+            labels: ['FB', 'WPP', 'ML'],
+            datasets: [{
+                label: 'Ventas',
+                data: [
+                    2,
+                    3,
+                    4,
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(255,99,132,0.6)'
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Medio de venta',
+                fonSize: 15
+            },
+            layout: {
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0
+                }
+            }
+        }
+    });
+    //---------------------------------------------------------------------------------------------------------
+    let myChart = document.getElementById('myChart').getContext('2d');
+    //Global options
+    Chart.defaults.global.defaultFontFamily = 'Roboto';
+    //Chart.defaults.global.defaultFontSize = '11';
+    Chart.defaults.global.defaultFontColor = '#000000';
     let massPopChar = new Chart(myChart, {
         type: 'line', //bar, gorizontalBar, pie, line, doughnut, ett
         data: {
             labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
             datasets: [{
-                label: 'Venta mensual',
+                label: 'Ganancia bruta',
                 data: [
                     5000,
                     6000,
@@ -82,41 +420,192 @@
                     12000,
                     13500,
                     16200
-                ]
-                label: 'Venta productos',
+                ],
+                backgrounColor: [
+                    'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(255,99,132,0.6)'
+            }, {
+                label: 'Gastos',
                 data: [
                     4000,
+                    6000,
+                    9800,
+                    15000,
+                    14500,
+                    12000,
+                    13000,
+                    14000,
+                    13500,
+                    11000,
+                    1500,
+                    3200
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(54,162,235,0.6)'
+            }, {
+                label: 'Diferencia',
+                data: [
+                    4000,
+                    6000,
+                    4800,
                     5000,
-                    8000,
+                    1500,
+                    3000,
+                    6000,
+                    7000,
+                    8500,
                     9000,
-                    9500,
-                    10000,
-                    10000,
+                    1000,
+                    1100
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(255,206,86,0.6)'
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Estadisticas mensuales dinero',
+                fonSize: 15
+
+            }
+        }
+    });
+</script>
+@*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+<script>
+    let mySecondChart = document.getElementById('mySecondChart').getContext('2d');
+    //Global options
+    Chart.defaults.global.defaultFontFamily = 'Roboto';
+    //Chart.defaults.global.defaultFontSize = '11';
+    Chart.defaults.global.defaultFontColor = '#000000';
+    let LittleMonth = new Chart(mySecondChart, {
+        type: 'line', //bar, gorizontalBar, pie, line, doughnut, ett
+        data: {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            datasets: [{
+                label: 'Ganancia bruta',
+                data: [
+                    5000,
+                    6000,
+                    9000,
                     10000,
                     10500,
                     11000,
-                    12500,
-                    15200
-                ]
+                    11000,
+                    11000,
+                    11500,
+                    12000,
+                    13500,
+                    16200
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(75,192,192,0.6)'
+            }, {
+                label: 'Diferencia',
+                data: [
+                    4000,
+                    6000,
+                    9800,
+                    15000,
+                    14500,
+                    12000,
+                    13000,
+                    14000,
+                    13500,
+                    11000,
+                    1500,
+                    3200
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    'rgba(153,102,255,0.6)',
+                    //'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(153,102,255,0.6)'
+            }, {
+                label: 'Gastos',
+                data: [
+                    -1000,
+                    -2000,
+                    -800,
+                    -5000,
+                    -4500,
+                    -12000,
+                    -13000,
+                    -14000,
+                    -13500,
+                    -11000,
+                    -1500,
+                    -3200
+                ],
+                backgrounColor: [
+                    //'rgba(255,99,132,0.6)'
+                    //'rgba(54,162,235,0.6)',
+                    //'rgba(255,206,86,0.6)',
+                    //'rgba(75,192,192,0.6)',
+                    //'rgba(153,102,255,0.6)',
+                    'rgba(255,159,64,0.6)',
+                    //'rgba(255,99,132,0.6)'
+                ],
+                fill: false,
+                borderWidth: 5,
+                borderColor: 'rgba(255,159,64,0.6)'
             }]
-            //datasets: [{
-            //    label: 'Venta productos',
-            //    data: [
-            //        4000,
-            //        5000,
-            //        8000,
-            //        9000,
-            //        9500,
-            //        10000,
-            //        10000,
-            //        10000,
-            //        10500,
-            //        11000,
-            //        12500,
-            //        15200
-            //    ]
-            //}]
         },
-        options: {}
+        options: {
+            title: {
+                display: true,
+                text: 'Estadisticas mensuales generales',
+                fonSize: 15
+
+            }
+        }
     });
 </script>
+
