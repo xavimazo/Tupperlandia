@@ -103,7 +103,6 @@
                                             <option value="" class="left circle">Actuaite</option>
                                             <option value="" class="left circle">Basic Line</option>
                                         </select>
-                                        <label>Linea</label>
                                     </div>
                                     <div class="col s2">
                                         <span class="card-title2">
@@ -193,20 +192,33 @@
     </div>
 </div>
 <!-- Modal Structure -->
-<div>
-    @*<a href="#modal1" class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</a>*@
-    <button data-target="modal1" class="btn modal-trigger">Modal</button>
-</div>
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>Modal Content</p>
+@foreach (var stock in Model)
+{
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="carousel carousel-slider center" data-indicators="true">
+                <div class="carousel-item" href="#one!">
+                    <img src="~/Content/background1.jpg" />
+                </div>
+                <div class="carousel-item" href="#two!">
+                    <img src="~/Content/background2.jpg" />
+                </div>
+                <div class="carousel-item" href="#three!">
+                    <img src="~/Content/background3.jpg" />
+                </div>
+                <div class="carousel-item" href="#four!">
+                    <img src="~/Content/Cristalwave_Valvula.png" />
+                </div>
+            </div>
+            <h4>@stock.Product.Name</h4>
+            <p>Modal Content</p>
+        </div>
+        @*<hr />*@
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+        </div>
     </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green">Agree</a>
-    </div>
-</div>
-
+}
 
 
 @section scripts {
@@ -217,5 +229,6 @@
         $(document).ready(function () {
             $('.modal').modal();
         });
+        $('.carousel.carousel-slider').carousel({ fullWidth: true });
     </script>
 }
