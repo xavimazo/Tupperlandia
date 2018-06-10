@@ -99,9 +99,9 @@
                                         </form>
                                         <select class="icons">
                                             <option value="" disabled selected>Todas las lineas</option>
-                                            <option value="" data-icon="images/sample-1.jpg" class="left circle">Alegra</option>
-                                            <option value="" data-icon="images/office.jpg" class="left circle">Actuaite</option>
-                                            <option value="" data-icon="images/yuna.jpg" class="left circle">Basic Line</option>
+                                            <option value="" class="left circle">Alegra</option>
+                                            <option value="" class="left circle">Actuaite</option>
+                                            <option value="" class="left circle">Basic Line</option>
                                         </select>
                                         <label>Linea</label>
                                     </div>
@@ -149,18 +149,22 @@
                                                 <input type="checkbox" id="test22" />
                                                 <label for="test22">Azul</label>
                                             </p>
+                                            <p>
+
+                                            </p>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>                   
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="parallax"><img src="~/Content/SpecialFeatures_Background1.png" alt="Unsplashed background img 1" style="transform: translate3d(-50%, 404.594px, 0px); opacity: 1;"></div>
 </div>
+@* LISTADO DE PRODUCTOS *@
 <div class="container">
     <div class="section">
         <div class="row">
@@ -168,16 +172,19 @@
             {
                 <div class="col s2">
                     <div class="card">
+                        <!--Card Image-->
                         <div class="card-image waves-effect waves-block waves-light">
                             <img class="activator" src="~/Content/ProductsImages/@stock.Image">
                         </div>
+                        <!--Card Footer-->
                         <div class="card-content">
-                            <span class="card-title-store activator grey-text text-darken-4">@stock.Product.Name<i class="material-icons right">more_vert</i></span>
-                            <p><a href="/Store/@stock.Id">Comprar</a></p>
+                            <span class="card-title-store activator grey-text text-darken-4"><a data-target="modal1" class="modal-trigger">@stock.Product.Name</a></span>
+                            <p class="card-title-store activator grey-text text-darken-4">$@stock.Price</p>
                         </div>
+                        <!--Pequeña descripcion-->
                         <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>@stock.Product.Name</span>
-                            <p></p>
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i><a data-target="modal1" class="modal-trigger">@stock.Product.Name</a></span>
+                            <p class="card-content-store">@stock.Product.ShortDescription</p>
                         </div>
                     </div>
                 </div>
@@ -185,12 +192,30 @@
         </div>
     </div>
 </div>
+<!-- Modal Structure -->
+<div>
+    @*<a href="#modal1" class="waves-effect waves-light btn modal-trigger" data-target="modal1">Modal</a>*@
+    <button data-target="modal1" class="btn modal-trigger">Modal</button>
+</div>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>Modal Content</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green">Agree</a>
+    </div>
+</div>
+
+
+
 @section scripts {
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
             $('select').material_select();
         });
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
     </script>
 }
-
-

@@ -102,3 +102,4 @@ C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.dll
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.pdb
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.fixesonsale.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.ResidencyDetail.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache

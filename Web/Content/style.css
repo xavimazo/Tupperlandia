@@ -6,6 +6,17 @@
  * Made By MaterializeCSS.com
  */
 
+.card .card-content-store {
+    font-size: 15px;
+    font-weight: 300;
+    text-overflow: ellipsis;
+}
+
+.card .card-content-TStore {
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+}
+
 .page-footer-dashboard{
 /*position: absolute;*/
   bottom: 50px;
