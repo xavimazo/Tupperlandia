@@ -4707,7 +4707,7 @@ small {
   transition: -webkit-box-shadow .25s;
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
-  padding: 24px;
+  padding: 10px;
   margin: 0.5rem 0 1rem 0;
   border-radius: 2px;
   background-color: #fff;
@@ -5648,6 +5648,7 @@ button.btn-floating {
 
 .modal h1, .modal h2, .modal h3, .modal h4 {
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 .modal .modal-content {

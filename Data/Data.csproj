@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201806100351498_ResidencyDetail.Designer.cs">
       <DependentUpon>201806100351498_ResidencyDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806101945104_adding recomendations propety.cs" />
+    <Compile Include="Migrations\201806101945104_adding recomendations propety.Designer.cs">
+      <DependentUpon>201806101945104_adding recomendations propety.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PublicationStatus.cs" />
     <Compile Include="Sale.cs" />
@@ -303,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806100351498_ResidencyDetail.resx">
       <DependentUpon>201806100351498_ResidencyDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101945104_adding recomendations propety.resx">
+      <DependentUpon>201806101945104_adding recomendations propety.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

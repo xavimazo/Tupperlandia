@@ -2,7 +2,6 @@
 @{
     Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
-<div class="container">
     <table class="highlight centered">
         <thead>
             <tr>
@@ -11,6 +10,7 @@
                 <th>Compuesto por</th>
                 <th>Descripcion rápida</th>
                 <th>Descripcion general</th>
+                <th>Recomendaciones</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
@@ -24,11 +24,11 @@
                     <td>@product.Composition</td>
                     <td>@product.ShortDescription</td>
                     <td>@product.LargeDescription</td>
+                    <td>@product.Recomendations</td>
                     <td><a href="/Product/Edit/@product.Id"><i class="small material-icons">mode_edit</i></a></td>
                     <td><a href="/Product/Delete/@product.Id"><i class="small material-icons">delete</i></a></td>
                 </tr>
             }
         </tbody>
     </table>
-</div>
 
