@@ -41,6 +41,7 @@
                     @Html.DropDownListFor(x => x.Stock.StatusId, Model.PublicationStatus.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.Status }), new { @class = "browser-default" })
                 </div>
                 <div class="col s3">
+                    @* En caso que la publicacion tenga DESCUENTO, se muestra dropwdown DESCUENTO *@
                     @if (Model.Stock.Status.Status.Contains("Descuento"))
                      {
                         @Html.LabelFor(x => x.Stock.DiscountId)

@@ -1,0 +1,28 @@
+﻿@model IList<Data.Dispatch>
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="container">
+    <table class="highlight centered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de entrega</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Dispatch in Model)
+            {
+                <tr>
+                    <td>@Dispatch.Id</td>
+                    <td>@Dispatch.DispatchType</td>
+                    <td><a href="/Dispatch/Edit/@Dispatch.Id"><i class="small material-icons">mode_edit</i></a></td>
+                    <td><a href="/Dispatch/Delete/@Dispatch.Id"><i class="small material-icons">delete</i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

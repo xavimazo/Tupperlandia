@@ -29,5 +29,7 @@ namespace Data
         public string EmailCliente { get; set; }
         [Display(Name = "Social")]
         public string SocialClient { get; set; }
+        [Display(Name = "Detalles de domicilio")]
+        public string ResidencyDetail { get; set; }
     }
 }

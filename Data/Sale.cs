@@ -17,10 +17,16 @@ namespace Data
         public string SaleDate { get; set; }
         [Display(Name = "Monto de pago")]
         public string SaleAmount { get; set; }
-        
+        [Display(Name = "Detalles")]
+        public string SaleDetailst { get; set; }
+
+        public int? DispatchId { get; set; }
         public virtual Dispatch Dispatch { get; set; }
+        public int? ClientId { get; set; }
         public virtual Client Client { get; set; }
+        public int? ProductId { get; set; }
         public virtual Product Product { get; set; }
+        public int? StockId { get; set; }
         public virtual Stock Stock { get; set; }
     }
 }

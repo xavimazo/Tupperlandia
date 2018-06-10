@@ -102,7 +102,9 @@ namespace Tupperware_e_commerce.Controllers
             var stock = new List<Stock>();
             using (var db = new TupperwareContext())
             {
-               stock = db.Stock.Include(s => s.Product).Include(s => s.Status).ToList();
+               stock = db.Stock.Include(s => s.Product)
+                               .Include(s => s.Status)
+                               .ToList();
             }
             return View("../Dashboard/Stock/Index", stock);
         }

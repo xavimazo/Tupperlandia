@@ -2,7 +2,7 @@
 @{
     Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
-<div class="container">
+
     <table class="highlight centered">
         <br />
         <thead>
@@ -10,7 +10,12 @@
                 <th>Fecha</th>
                 <th>Pago del Cliente</th>
                 <th>Cliente</th>
-                <th>Direccion</th>
+                <th>Calle</th>
+                <th>Localidad</th>
+                <th>Numeracion</th>
+                <th>Piso</th>
+                <th>Departamento</th>
+                <th>Detalles domicilio</th>
                 <th>Producto</th>
                 <th>Capacidad</th>
                 <th>Color</th>
@@ -24,23 +29,28 @@
         <tbody>
             @foreach (var sale in Model)
             {
-                <tr>    
-                    <td>@sale.SaleDate</td>
-                    <th>@sale.SaleAmount</th>
-                    <td>@sale.Client</td>
-                    @*<td>@sale.Client.Calle</td>*@
-                    @*<td>@sale.Product.Name</td>*@
-                    @*<td>@sale.Stock.Capacidad</td>*@
-                    <td>@*@sale.Stock.Color*@</td>
-                    <td>@sale.SaleUnits</td>
-                    <td>@*@sale.Dispatch.DispatchType*@</td>
-                    <td>@*@sale.Client.ContactoCliente*@</td>
-                    <td><a href="/Sale/Edit/@sale.Id"><i class="small material-icons">mode_edit</i></td>
-                    <td><a href="/Sale/Delete/@sale.Id"><i class="small material-icons">delete</i></td>
-                </tr>
+            <tr>
+                <td>@sale.SaleDate</td>
+                <th>@sale.SaleAmount</th>
+                <td>@sale.Client.NombreDelCliente</td>
+                <td>@sale.Client.Calle</td>
+                <td>@sale.Client.Localidad</td>
+                <td>@sale.Client.Numeracion</td>
+                <td>@sale.Client.Piso</td>
+                <td>@sale.Client.Departamento</td>
+                <td>@sale.Client.ResidencyDetail</td>
+                <td>@sale.Product.Name</td>
+                <td>@sale.Stock.Capacidad</td>
+                <td>@sale.Stock.Color</td>
+                <td>@sale.SaleUnits</td>
+                <td>@sale.Dispatch.DispatchType</td>
+                <td>@sale.Client.ContactoCliente</td>
+                <td><a href="/Sale/Edit/@sale.Id"><i class="small material-icons">mode_edit</i></td>
+                <td><a href="/Sale/Delete/@sale.Id"><i class="small material-icons">delete</i></td>
+            </tr>
             }
         </tbody>
     </table>
-</div>
+
 
 

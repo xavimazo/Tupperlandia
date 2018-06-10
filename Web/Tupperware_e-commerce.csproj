@@ -145,6 +145,7 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DiscountController.cs" />
+    <Compile Include="Controllers\DispatchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\PublicationStatusController.cs" />
@@ -264,6 +265,10 @@
     <Content Include="Views\Dashboard\Discount\Delete.cshtml" />
     <Content Include="Views\Dashboard\Discount\Create.cshtml" />
     <Content Include="Views\Dashboard\Discount\Edit.cshtml" />
+    <Content Include="Views\Dashboard\Dispatch\Create.cshtml" />
+    <Content Include="Views\Dashboard\Dispatch\Delete.cshtml" />
+    <Content Include="Views\Dashboard\Dispatch\Edit.cshtml" />
+    <Content Include="Views\Dashboard\Dispatch\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

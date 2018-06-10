@@ -71,13 +71,10 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var sale = db.Sales
-                    .Include(s => s.Client.NombreDelCliente)
-                    .Include(s => s.Client.Calle)
-                    .Include(s => s.Client.ContactoCliente)
-                    .Include(s => s.Dispatch.DispatchType)
-                    .Include(s => s.Product.Name)
-                    .Include(s => s.Stock.Capacidad)
-                    .Include(s => s.Stock.Color)
+                    .Include(s => s.Client)
+                    .Include(s => s.Dispatch)
+                    .Include(s => s.Product)
+                    .Include(s => s.Stock)
                     .FirstOrDefault(s => s.Id == id);
 
                 var Stock = db.Stock.ToList();
@@ -93,7 +90,7 @@ namespace Tupperware_e_commerce.Controllers
                     Dispatch = Dispatch
                 };
 
-                return View("../Dashboard/Client/Edit", viewModel);
+                return View("../Dashboard/Sale/Edit", viewModel);
             }
         }
 
@@ -111,12 +108,16 @@ namespace Tupperware_e_commerce.Controllers
 
         public ActionResult Index()
         {
-            var sales = new List<Sale>();
+            var Sales = new List<Sale>();
             using (var db = new TupperwareContext())
             {
-                sales = db.Sales.ToList();
+                Sales = db.Sales.Include(s => s.Client)
+                                .Include(s => s.Dispatch)
+                                .Include(s => s.Product)
+                                .Include(s => s.Stock)
+                                .ToList();
             }
-            return View("../Dashboard/Sale/Index", sales);
+            return View("../Dashboard/Sale/Index", Sales);
         }
     }
 }

@@ -6,6 +6,10 @@
  * Made By MaterializeCSS.com
  */
 
+.page-footer-dashboard{
+/*position: absolute;*/
+  bottom: 50px;
+}
 
 .chart-container {
     position: relative;
@@ -20,7 +24,6 @@
     width: 200px;
 }
 
-
 @font-face {
     font-family: Tupperware-Handwriting;
     src: url("../fonts/tupperware_handwriting-webfont.eot");
@@ -28,7 +31,6 @@
     font-weight: normal;
     font-style: normal
 }
-
 
 .card .card-title-store {
     font-size: 15px;

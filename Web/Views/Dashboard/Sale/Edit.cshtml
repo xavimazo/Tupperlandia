@@ -1,4 +1,4 @@
-﻿@model Data.Sale
+﻿@model Tupperware_e_commerce.Models.SaleViewModel
 @{
     Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
@@ -8,20 +8,36 @@
             <br />
             <div class="row">
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Client)
+                    @Html.EditorFor(x => x.Sale.SaleDate)
+                    @Html.LabelFor(x => x.Sale.SaleDate)
+                </div>
+                <div class="input-field col s3">
+                    @Html.EditorFor(x => x.Sale.SaleAmount)
+                    @Html.LabelFor(x => x.Sale.SaleAmount)
+                </div>
+                <div class="col s3">
                     @Html.LabelFor(x => x.Client)
+                    @Html.DropDownListFor(x => x.Sale.ClientId, Model.Client.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.NombreDelCliente }), new { @class = "browser-default" })    @*Concatenar calle + Numero + Departamente + Piso*@
+                </div>
+                <div class="col s3">
+                    @Html.LabelFor(x => x.Products)
+                    @Html.DropDownListFor(x => x.Sale.ProductId, Model.Products.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.Name }), new { @class = "browser-default" })
+                </div>
+                <div class="col s3">
+                    @Html.LabelFor(x => x.Stock)
+                    @Html.DropDownListFor(x => x.Sale.StockId, Model.Stock.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.Capacidad }), new { @class = "browser-default" })
                 </div>
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.ProductAndCapacity)
-                    @Html.LabelFor(x => x.ProductAndCapacity)
+                    @Html.EditorFor(x => x.Sale.SaleUnits)
+                    @Html.LabelFor(x => x.Sale.SaleUnits)
+                </div>
+                <div class="col s3">
+                    @Html.LabelFor(x => x.Dispatch)
+                    @Html.DropDownListFor(x => x.Sale.DispatchId, Model.Dispatch.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.DispatchType }), new { @class = "browser-default" })
                 </div>
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Units)
-                    @Html.LabelFor(x => x.Units)
-                </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Date)
-                    @Html.LabelFor(x => x.Date)
+                    @Html.EditorFor(x => x.Sale.Client.ContactoCliente)
+                    @Html.LabelFor(x => x.Sale.Client.ContactoCliente)
                 </div>
                 <div class="input-field col s3">
                     <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">save</i>Editar producto</button>

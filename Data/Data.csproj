@@ -185,6 +185,18 @@
     <Compile Include="Migrations\201806092257313_adding Dispatch.Designer.cs">
       <DependentUpon>201806092257313_adding Dispatch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806100219104_Dispatch controller.cs" />
+    <Compile Include="Migrations\201806100219104_Dispatch controller.Designer.cs">
+      <DependentUpon>201806100219104_Dispatch controller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806100257481_fixes on sale.cs" />
+    <Compile Include="Migrations\201806100257481_fixes on sale.Designer.cs">
+      <DependentUpon>201806100257481_fixes on sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806100351498_ResidencyDetail.cs" />
+    <Compile Include="Migrations\201806100351498_ResidencyDetail.Designer.cs">
+      <DependentUpon>201806100351498_ResidencyDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PublicationStatus.cs" />
     <Compile Include="Sale.cs" />
@@ -282,6 +294,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806092257313_adding Dispatch.resx">
       <DependentUpon>201806092257313_adding Dispatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806100219104_Dispatch controller.resx">
+      <DependentUpon>201806100219104_Dispatch controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806100257481_fixes on sale.resx">
+      <DependentUpon>201806100257481_fixes on sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806100351498_ResidencyDetail.resx">
+      <DependentUpon>201806100351498_ResidencyDetail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
