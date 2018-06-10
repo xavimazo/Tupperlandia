@@ -7,13 +7,13 @@ namespace Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class newpropertiesinSales : IMigrationMetadata
+    public sealed partial class addingDispatch : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(newpropertiesinSales));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addingDispatch));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806091812030_new properties in Sales"; }
+            get { return "201806092257313_adding Dispatch"; }
         }
         
         string IMigrationMetadata.Source

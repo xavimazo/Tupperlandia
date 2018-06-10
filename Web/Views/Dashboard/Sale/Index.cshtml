@@ -28,13 +28,13 @@
                     <td>@sale.SaleDate</td>
                     <th>@sale.SaleAmount</th>
                     <td>@sale.Client</td>
-                    <td>@sale.Client.Calle</td>@*Concatenar calle + Numero + Departamente + Piso*@
-                    <td>@sale.Product.Name</td>
-                    <td>@sale.Stock.Capacidad</td>
-                    <td>@sale.Stock.Color</td>
+                    @*<td>@sale.Client.Calle</td>*@
+                    @*<td>@sale.Product.Name</td>*@
+                    @*<td>@sale.Stock.Capacidad</td>*@
+                    <td>@*@sale.Stock.Color*@</td>
                     <td>@sale.SaleUnits</td>
-                    <td>@sale.Dispatch.DispatchType</td>
-                    <td>@sale.Client.ContactoCliente</td>
+                    <td>@*@sale.Dispatch.DispatchType*@</td>
+                    <td>@*@sale.Client.ContactoCliente*@</td>
                     <td><a href="/Sale/Edit/@sale.Id"><i class="small material-icons">mode_edit</i></td>
                     <td><a href="/Sale/Delete/@sale.Id"><i class="small material-icons">delete</i></td>
                 </tr>

@@ -7,13 +7,13 @@ namespace Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class addinginfo : IMigrationMetadata
+    public sealed partial class addinginfowithoutdispatch : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addinginfo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addinginfowithoutdispatch));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806092147185_adding info"; }
+            get { return "201806092255178_adding info without dispatch"; }
         }
         
         string IMigrationMetadata.Source

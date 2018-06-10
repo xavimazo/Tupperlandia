@@ -177,13 +177,13 @@
     <Compile Include="Migrations\201806091741543_Adding Social Client.Designer.cs">
       <DependentUpon>201806091741543_Adding Social Client.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806091812030_new properties in Sales.cs" />
-    <Compile Include="Migrations\201806091812030_new properties in Sales.Designer.cs">
-      <DependentUpon>201806091812030_new properties in Sales.cs</DependentUpon>
+    <Compile Include="Migrations\201806092255178_adding info without dispatch.cs" />
+    <Compile Include="Migrations\201806092255178_adding info without dispatch.Designer.cs">
+      <DependentUpon>201806092255178_adding info without dispatch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806092147185_adding info.cs" />
-    <Compile Include="Migrations\201806092147185_adding info.Designer.cs">
-      <DependentUpon>201806092147185_adding info.cs</DependentUpon>
+    <Compile Include="Migrations\201806092257313_adding Dispatch.cs" />
+    <Compile Include="Migrations\201806092257313_adding Dispatch.Designer.cs">
+      <DependentUpon>201806092257313_adding Dispatch.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PublicationStatus.cs" />
@@ -277,11 +277,11 @@
     <EmbeddedResource Include="Migrations\201806091741543_Adding Social Client.resx">
       <DependentUpon>201806091741543_Adding Social Client.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806091812030_new properties in Sales.resx">
-      <DependentUpon>201806091812030_new properties in Sales.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806092255178_adding info without dispatch.resx">
+      <DependentUpon>201806092255178_adding info without dispatch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806092147185_adding info.resx">
-      <DependentUpon>201806092147185_adding info.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806092257313_adding Dispatch.resx">
+      <DependentUpon>201806092257313_adding Dispatch.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
