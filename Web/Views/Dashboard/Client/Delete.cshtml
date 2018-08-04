@@ -2,8 +2,11 @@
 @{
     Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
+<div class="wrapper">
+    <div class="row wrapper">
+    Esta seguro que desea eliminar el Cliente @Model.NombreDelCliente?
 
-Esta seguro que desea eliminar el Cliente @Model.NombreDelCliente?
-
-<a href="/Client/DeleteConfirmation/@Model.Id" class="waves-effect waves-light btn col s6">Eliminar</a>
-<a href="/Client/Index" class="waves-effect waves-light btn col s6">Cancelar</a>
+    <a href="/Client/DeleteConfirmation/@Model.Id" class="waves-effect waves-light btn col s6">Eliminar</a>
+    <a href="/Client/Index" class="waves-effect waves-light btn col s6">Cancelar</a>
+    </div>
+</div>

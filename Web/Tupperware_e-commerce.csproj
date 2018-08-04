@@ -169,11 +169,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\BPA-free-symbol.png" />
     <Content Include="Content\Cristalwave_Valvula.png" />
+    <Content Include="Content\Dashboard\SideNavBackground.jpg" />
     <Content Include="Content\materialize.css" />
     <Content Include="Content\materialize.min.css" />
     <Content Include="Content\Modular_Sello.png" />
     <Content Include="Content\nouislider.css" />
     <Content Include="Content\nouislider.min.css" />
+    <Content Include="Content\Dashboard\Perfil.jpg" />
     <Content Include="Content\ProductsImages\EcoTwist500mlVioleta.jpg" />
     <Content Include="Content\Redondo_Sello.png" />
     <Content Include="Content\Sensacion_Sello.png" />

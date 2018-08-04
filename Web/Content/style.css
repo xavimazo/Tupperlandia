@@ -6,6 +6,23 @@
  * Made By MaterializeCSS.com
  */
 
+.wrapper {
+    padding-left: 300px;
+}
+
+header, main, footer {
+    padding-left: 300px;
+}
+
+.static {
+    display: block !important;
+    position: relative !important;
+}
+
+.modalContent {
+    font: "Roboto", sans-serif;
+}
+
 .card .card-content-store {
     font-size: 15px;
     font-weight: 300;

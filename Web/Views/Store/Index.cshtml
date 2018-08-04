@@ -214,18 +214,28 @@
                 </div>
             </div>
             <hr />
-            <div class="row">
-                <div class="col s4 card-panel blue-grey lighten-3"><h4>@stock.Product.Name</h4></div>
-                <div class="col s4 card-panel blue-grey lighten-3"><h4>@stock.Capacidad</h4></div>
-                <div class="col s4 card-panel blue-grey lighten-3"><h4>@stock.Measurements</h4></div>
-                </div>
+            <div class="center">
+                <h4>@stock.Product.Name $@stock.Price</h4>
+                <h5>Capacidad: @stock.Capacidad ● Medidas: @stock.Measurements ● Linea: @stock.Line ● Categoria: @stock.Categorie</h5>
+                <h5>Colores disponibles: @stock.Color</h5>
+            </div>
+            <div class="modalContent">
+                <h6>Compuesto por @stock.Product.Composition</h6>
+                <hr />
+                <h6>Recomendaciones: @stock.Product.Recomendations</h6>
+                <hr />
+                <h6>@stock.Product.LargeDescription</h6>
             </div>
         </div>
+    </div>
 
-        @*<hr />*@
-        <div class="modal-footer">
+
+
+
+    @*<hr />*@
+    @*<div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-        </div>
+        </div>*@
 }
 
 
@@ -238,5 +248,14 @@
             $('.modal').modal();
         });
         $('.carousel.carousel-slider').carousel({ fullWidth: true });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+        });
+
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
     </script>
 }

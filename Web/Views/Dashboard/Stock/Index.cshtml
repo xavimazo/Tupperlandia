@@ -2,48 +2,47 @@
 @{
     Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
-
-<table class="highlight centered">
-    <br />
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Producto</th>
-            <th>Capacidad</th>
-            <th>Color</th>
-            <th>Dimensiones</th>
-            <th>Categoria</th>
-            <th>Linea</th>
-            <th>Precio</th>
-            <th>Estado</th>
-            <th>Descuento</th>
-            <th>Stock</th>
-            <th>Imagen</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var stock in Model)
-        {
+<div class="wrapper">
+    <table class="highlight centered">
+        <br />
+        <thead>
             <tr>
-                <td>@stock.Id</td>
-                <td>@stock.Product.Name</td>
-                <td>@stock.Capacidad</td>
-                <td>@stock.Color</td>
-                <td>@stock.Measurements</td>
-                <td>@stock.Categorie</td>
-                <td>@stock.Line</td>
-                <td>@stock.Price</td>
-                <td>@(stock.Status != null ? stock.Status.Status : "")</td>
-                <td>@stock.percentage</td>
-                <td>@stock.CantidadStock</td>
-                <td>@stock.Image</td>
-                <td><a href="/Stock/Edit/@stock.Id"><i class="small material-icons">mode_edit</i></td>
-                <td><a href="/Stock/Delete/@stock.Id"><i class="small material-icons">delete</i></td>
+                <th>Id</th>
+                <th>Producto</th>
+                <th>Capacidad</th>
+                <th>Color</th>
+                <th>Dimensiones</th>
+                <th>Categoria</th>
+                <th>Linea</th>
+                <th>Precio</th>
+                <th>Estado</th>
+                <th>Descuento</th>
+                <th>Stock</th>
+                <th>Imagen</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
             </tr>
-        }
-    </tbody>
-</table>
-
-
+        </thead>
+        <tbody>
+            @foreach (var stock in Model)
+            {
+                <tr>
+                    <td>@stock.Id</td>
+                    <td>@stock.Product.Name</td>
+                    <td>@stock.Capacidad</td>
+                    <td>@stock.Color</td>
+                    <td>@stock.Measurements</td>
+                    <td>@stock.Categorie</td>
+                    <td>@stock.Line</td>
+                    <td>@stock.Price</td>
+                    <td>@(stock.Status != null ? stock.Status.Status : "")</td>
+                    <td>@stock.percentage</td>
+                    <td>@stock.CantidadStock</td>
+                    <td>@stock.Image</td>
+                    <td><a href="/Stock/Edit/@stock.Id"><i class="small material-icons">mode_edit</i></td>
+                    <td><a href="/Stock/Delete/@stock.Id"><i class="small material-icons">delete</i></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

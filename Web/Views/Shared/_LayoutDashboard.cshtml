@@ -9,49 +9,75 @@
     <link href="~/Content/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="~/Content/nouislider.min.css" rel="stylesheet" />
 </head>
-
-<body>
-    <div class="navbar-fixed">
-        <nav class="white" role="navigation">
-            <div class="nav-wrapper">
-                <img src="~/Content/tupperware-logo-black.png" id="Tupperware-logo-black" href="#">
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="~/Dashboard/Index#">Estadisticas</a></li>
-                    <li><a class="dropdown-button" href="~/Client" data-activates="dropdownClient">Clientes<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-button" href="~/Product" data-activates="dropdownProduct">Productos<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-button" href="~/Stock" data-activates="dropdownStock">Stock<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-button" href="~/Sale" data-activates="dropdownSale">Ventas<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-button" href="~/PublicationStatus" data-activates="dropdownStatus">Estados<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-button" href="~/Discount" data-activates="dropdownDiscount">Descuentos<i class="material-icons right">arrow_drop_down</i></a></li>
-                    <li><a class="dropdown-button" href="~/Dispatch" data-activates="dropdownDispatch">Despacho<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+@*BTN MOSTRAR-OCULTAR SIDENAV <a href="#" data-activates='menu' class="btn button-collapse">Mostrar menu</a>*@
+<div class="wrapper">
+    <ul id="slide-out" class="side-nav fixed wrapper">
+        <li>
+            <div class="userView">
+                <img class="background" src="~/Content/Dashboard/SideNavBackground.jpg">
+                <a href="#!user"><img class="circle" src="~/Content/Dashboard/Perfil.jpg"></a>
+                <a href="#!name"><span class="white-text name">John Doe</span></a>
+                <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
             </div>
-        </nav>
-    </div>
-    <ul id="dropdownClient" class="dropdown-content">
-        <li><a href="~/Client/Create">Nuevo cliente</a></li>
+        </li>
+        <li><a class="waves-effect" href="~/Dashboard/Index#"><i class="material-icons">timeline</i>Estadisticas</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="~/Client"><i class="material-icons">face</i>Clientes</a></li>
+        <li><a class="waves-effect" href="~/Product"><i class="material-icons">style</i>Productos</a></li>
+        <li><a class="waves-effect" href="~/Stock"><i class="material-icons">apps</i>Publicaciones / Stock</a></li>
+        <li><a class="waves-effect" href="~/Sale"><i class="material-icons">add_shopping_cart</i>Ventas</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Configuraciones</a></li>
+        <li><a class="waves-effect" href="~/PublicationStatus"><i class="material-icons"></i>Estados</a></li>
+        <li><a class="waves-effect" href="~/Discount"><i class="material-icons"></i>Descuentos</a></li>
+        <li><a class="waves-effect" href="~/Dispatch"><i class="material-icons"></i>Despacho</a></li>
     </ul>
-    <ul id="dropdownProduct" class="dropdown-content">
-        <li><a href="~/Product/Create">Nuevo producto</a></li>
-    </ul>
-    <ul id="dropdownStock" class="dropdown-content">
-        <li><a href="~/Stock/Create">Agregar stock</a></li>
-    </ul>
-    <ul id="dropdownSale" class="dropdown-content">
-        <li><a href="~/Sale/Create">Nueva venta</a></li>
-    </ul>
-    <ul id="dropdownStatus" class="dropdown-content">
-        <li><a href="~/PublicationStatus/Create">Nuevo estado</a></li>
-    </ul>
-    <ul id="dropdownDiscount" class="dropdown-content">
-        <li><a href="~/Discount/Create">Nuevo descuento</a></li>
-    </ul>
-    <ul id="dropdownDispatch" class="dropdown-content">
-        <li><a href="~/Dispatch/Create">Nuevo tipo de entrega</a></li>
-    </ul>
+</div>
+<body>
+    @*</body>
+        <body>
+            <div class="navbar-fixed">
+                <nav class="white" role="navigation">
+                    <div class="nav-wrapper">
+                        <img src="~/Content/tupperware-logo-black.png" id="Tupperware-logo-black" href="#">
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="~/Dashboard/Index#">Estadisticas</a></li>
+                            <li><a class="dropdown-button" href="~/Client" data-activates="dropdownClient">Clientes<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="~/Product" data-activates="dropdownProduct">Productos<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="~/Stock" data-activates="dropdownStock">Stock<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="~/Sale" data-activates="dropdownSale">Ventas<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="~/PublicationStatus" data-activates="dropdownStatus">Estados<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="~/Discount" data-activates="dropdownDiscount">Descuentos<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="~/Dispatch" data-activates="dropdownDispatch">Despacho<i class="material-icons right">arrow_drop_down</i></a></li>
+                        </ul>
+                        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+                    </div>
+                </nav>
+            </div>
+            <ul id="dropdownClient" class="dropdown-content">
+                <li><a href="~/Client/Create">Nuevo cliente</a></li>
+            </ul>
+            <ul id="dropdownProduct" class="dropdown-content">
+                <li><a href="~/Product/Create">Nuevo producto</a></li>
+            </ul>
+            <ul id="dropdownStock" class="dropdown-content">
+                <li><a href="~/Stock/Create">Agregar stock</a></li>
+            </ul>
+            <ul id="dropdownSale" class="dropdown-content">
+                <li><a href="~/Sale/Create">Nueva venta</a></li>
+            </ul>
+            <ul id="dropdownStatus" class="dropdown-content">
+                <li><a href="~/PublicationStatus/Create">Nuevo estado</a></li>
+            </ul>
+            <ul id="dropdownDiscount" class="dropdown-content">
+                <li><a href="~/Discount/Create">Nuevo descuento</a></li>
+            </ul>
+            <ul id="dropdownDispatch" class="dropdown-content">
+                <li><a href="~/Dispatch/Create">Nuevo tipo de entrega</a></li>
+            </ul>*@
     @RenderBody()
-    <footer class="page-footer-dashboard teal" >
+    <footer class="page-footer-dashboard teal">
         <br />
         <br />
     </footer>
