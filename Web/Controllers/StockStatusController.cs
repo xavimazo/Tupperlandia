@@ -11,21 +11,21 @@ using System.Data.Entity;
 
 namespace Tupperware_e_commerce.Controllers
 {
-    public class PublicationStatusController : Controller
+    public class StockStatusController : Controller
     {
         // GET: Client
         public ActionResult Create()
         {
-            var model = new PublicationStatus();
+            var model = new StockStatus();
             return View("../Dashboard/PublicationStatus/Create", model);
         }
 
         [HttpPost]
-        public ActionResult Create(PublicationStatus publicationStatuses)
+        public ActionResult Create(StockStatus StockStatuses)
         {
             using (var db = new TupperwareContext())
             {
-                db.PublicationStatuses.Add(publicationStatuses);
+                db.StockStatuses.Add(StockStatuses);
                 db.SaveChanges();
             }
             Session["Message"] = "El estado de publicación fue guardado exitosamente";
@@ -37,7 +37,7 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var PublicationStatus = db.PublicationStatuses.Find(id);
+                var PublicationStatus = db.StockStatuses.Find(id);
                 return View("../Dashboard/PublicationStatus/Delete", PublicationStatus);
             }
         }
@@ -46,8 +46,8 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var StatusToRemove = db.PublicationStatuses.Find(id);
-                db.PublicationStatuses.Remove(StatusToRemove);
+                var StatusToRemove = db.StockStatuses.Find(id);
+                db.StockStatuses.Remove(StatusToRemove);
                 db.SaveChanges();
             }
             return RedirectToAction("Index");
@@ -58,18 +58,18 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var PublicationStatus = db.PublicationStatuses.Find(id);
+                var PublicationStatus = db.StockStatuses.Find(id);
                 return View("../Dashboard/PublicationStatus/Edit");
             }
         }
 
         [HttpPost]
-        public ActionResult Edit(PublicationStatus PublicationStatuses)
+        public ActionResult Edit(StockStatus StockStatuses)
         {
             using (var db = new TupperwareContext())
             {
-                var PublicationStatusToEdit = db.PublicationStatuses.Find(PublicationStatuses.Id);
-                db.Entry(PublicationStatusToEdit).CurrentValues.SetValues(PublicationStatuses);
+                var PublicationStatusToEdit = db.StockStatuses.Find(StockStatuses.StockStatusId);
+                db.Entry(PublicationStatusToEdit).CurrentValues.SetValues(StockStatuses);
                 db.SaveChanges();
             }
             return RedirectToAction("Index");
@@ -77,10 +77,10 @@ namespace Tupperware_e_commerce.Controllers
 
         public ActionResult Index()
         {
-            var PublicationStatus = new List<PublicationStatus>();
+            var PublicationStatus = new List<StockStatus>();
             using (var db = new TupperwareContext())
             {
-                PublicationStatus = db.PublicationStatuses.ToList();
+                PublicationStatus = db.StockStatuses.ToList();
             }
             return View("../Dashboard/PublicationStatus/Index", PublicationStatus);
         }

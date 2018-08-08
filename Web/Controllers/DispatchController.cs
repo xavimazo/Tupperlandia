@@ -66,7 +66,7 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var dispatchToEdit = db.Dispatches.Find(dispatch.Id);
+                var dispatchToEdit = db.Dispatches.Find(dispatch.DispatchId);
                 db.Entry(dispatchToEdit).CurrentValues.SetValues(dispatch);
                 db.SaveChanges();
             }

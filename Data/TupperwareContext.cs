@@ -21,14 +21,16 @@ namespace Data
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Stock> Stock { get; set; }
-        public virtual DbSet<VariationType> VariationTypes { get; set; }
+        public virtual DbSet<Categorie> Categories { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
-        public virtual DbSet<Sale> Sales { get; set; }
-        public virtual DbSet<PublicationStatus> PublicationStatuses { get; set; }
         public virtual DbSet<Discount> Discounts { get; set; }
         public virtual DbSet<Dispatch> Dispatches { get; set; }
+        public virtual DbSet<Line> Lines { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
+        public virtual DbSet<Stock> Stock { get; set; }
+        public virtual DbSet<StockStatus> StockStatuses { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 
     //public class MyEntity

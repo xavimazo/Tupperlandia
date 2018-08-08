@@ -7,7 +7,7 @@ namespace Tupperware_e_commerce.Models
     {
         public Stock Stock;
         public IEnumerable<Discount> Discounts;
-        public IEnumerable<PublicationStatus> PublicationStatus;        
+        public IEnumerable<StockStatus> StockStatus;        
         public IEnumerable<Product> Products;
     }
 }

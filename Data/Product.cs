@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data
 {
     public class Product
     {
         [Key]
-        public int Id { get; set; }
-        [Display(Name = "Nombre del producto")]
-        public string Name { get; set; }
+        public int ProductId { get; set; }
+        [Display(Name = "Nombre")]
+        public string ProductName { get; set; }
         [Display(Name = "Compuesto por")]
-        public string Composition { get; set; }
+        public string ProductComposition { get; set; }
         [Display(Name = "Descripcion general")]
-        public string LargeDescription { get; set; }
+        public string FullDescription { get; set; }
         [Display(Name = "Descripcion rápida")]
         public string ShortDescription { get; set; }
         [Display(Name = "Recomendaciones")]

@@ -22,7 +22,7 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                if (db.Products.Any(p => p.Name == product.Name))
+                if (db.Products.Any(p => p.ProductName == product.ProductName))
                     throw new Exception("Ya se agrego un producto con ese nombre");
 
                 db.Products.Add(product);
@@ -71,7 +71,7 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var productToEdit = db.Products.Find(product.Id);
+                var productToEdit = db.Products.Find(product.ProductId);
                 db.Entry(productToEdit).CurrentValues.SetValues(product);
                 db.SaveChanges();
             }

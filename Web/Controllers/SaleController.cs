@@ -15,10 +15,10 @@ namespace Tupperware_e_commerce.Controllers
         // GET: Sale
         public ActionResult Create()
         {
-            var model = new Sale();
+            var model = new ShoppingCart();
             var viewModel = new SaleViewModel
             {
-                Sale = model
+                ShoppingCart = model
             };
 
             using (var db = new TupperwareContext())
@@ -33,11 +33,11 @@ namespace Tupperware_e_commerce.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Sale sale)
+        public ActionResult Create(ShoppingCart shoppingCart)
         {
             using (var db = new TupperwareContext())
             {
-                db.Sales.Add(sale);
+                db.ShoppingCarts.Add(shoppingCart);
                 db.SaveChanges();
             }
             Session["Message"] = "La venta fue guardado exitosamente";
@@ -49,8 +49,8 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var sale = db.Sales.Find(Id);
-                return View("../Dashboard/Sale/Delete", sale);
+                var cart = db.ShoppingCarts.Find(Id);
+                return View("../Dashboard/Sale/Delete", cart);
             }
         }
 
@@ -58,8 +58,8 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var SaleToRemove = db.Sales.Find(id);
-                db.Sales.Remove(SaleToRemove);
+                var CartToRemove = db.ShoppingCarts.Find(id);
+                db.ShoppingCarts.Remove(CartToRemove);
                 db.SaveChanges();
             }
             return RedirectToAction("Index");
@@ -70,24 +70,27 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var sale = db.Sales
-                    .Include(s => s.Client)
-                    .Include(s => s.Dispatch)
-                    .Include(s => s.Product)
+                var sale = db.ShoppingCarts
+                    .Include(s => s.CartId)
+                    .Include(s => s.Amount)
+                    .Include(s => s.CartDate)
                     .Include(s => s.Stock)
-                    .FirstOrDefault(s => s.Id == id);
+                    .Include(s => s.Dispatch)
+                    .Include(s => s.Client)
+                    .FirstOrDefault(s => s.CartId == id);
 
+                var CartId = db.ShoppingCarts.ToList();
+                var Amount = db.ShoppingCarts.ToList();
+                var CartDate = db.ShoppingCarts.ToList();
                 var Stock = db.Stock.ToList();
-                var Client = db.Clients.ToList();
-                var Products = db.Products.ToList();
                 var Dispatch = db.Dispatches.ToList();
+                var Client = db.Clients.ToList();
 
                 var viewModel = new SaleViewModel
                 {
                     Stock = Stock,
-                    Products = Products,
-                    Client = Client,
-                    Dispatch = Dispatch
+                    Dispatch = Dispatch,
+                    Client =  Client
                 };
 
                 return View("../Dashboard/Sale/Edit", viewModel);
@@ -95,12 +98,12 @@ namespace Tupperware_e_commerce.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Sale sale)
+        public ActionResult Edit(ShoppingCart shoppingCart)
         {
             using (var db = new TupperwareContext())
             {
-                var SaleToEdit = db.Sales.Find(sale.Id);
-                db.Entry(SaleToEdit).CurrentValues.SetValues(sale);
+                var CartToEdit = db.ShoppingCarts.Find(shoppingCart.CartId);
+                db.Entry(CartToEdit).CurrentValues.SetValues(shoppingCart);
                 db.SaveChanges();
             }
             return RedirectToAction("Index");
@@ -108,16 +111,18 @@ namespace Tupperware_e_commerce.Controllers
 
         public ActionResult Index()
         {
-            var Sales = new List<Sale>();
+            var shoppingCarts = new List<ShoppingCart>();
             using (var db = new TupperwareContext())
             {
-                Sales = db.Sales.Include(s => s.Client)
-                                .Include(s => s.Dispatch)
-                                .Include(s => s.Product)
+                shoppingCarts = db.ShoppingCarts.Include(s => s.CartId)
+                                .Include(s => s.Amount)
+                                .Include(s => s.CartDate)
                                 .Include(s => s.Stock)
+                                .Include(s => s.Dispatch)
+                                .Include(s => s.Client)
                                 .ToList();
             }
-            return View("../Dashboard/Sale/Index", Sales);
+            return View("../Dashboard/Sale/Index", shoppingCarts);
         }
     }
 }

@@ -68,7 +68,7 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var discountToEdit = db.Discounts.Find(Discounts.Id);
+                var discountToEdit = db.Discounts.Find(Discounts.DiscountId);
                 db.Entry(discountToEdit).CurrentValues.SetValues(Discounts);
                 db.SaveChanges();
             }

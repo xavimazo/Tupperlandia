@@ -26,22 +26,23 @@
         <tbody>
             @foreach (var stock in Model)
             {
-                <tr>
-                    <td>@stock.Id</td>
-                    <td>@stock.Product.Name</td>
-                    <td>@stock.Capacidad</td>
-                    <td>@stock.Color</td>
-                    <td>@stock.Measurements</td>
-                    <td>@stock.Categorie</td>
-                    <td>@stock.Line</td>
-                    <td>@stock.Price</td>
-                    <td>@(stock.Status != null ? stock.Status.Status : "")</td>
-                    <td>@stock.percentage</td>
-                    <td>@stock.CantidadStock</td>
-                    <td>@stock.Image</td>
-                    <td><a href="/Stock/Edit/@stock.Id"><i class="small material-icons">mode_edit</i></td>
-                    <td><a href="/Stock/Delete/@stock.Id"><i class="small material-icons">delete</i></td>
-                </tr>
+            <tr>
+                <td>@stock.Id</td>
+                <td>@stock.Product.Name</td>
+                <td>@stock.Capacidad</td>
+                <td>@stock.Color</td>
+                <td>@stock.Measurements</td>
+                <td>@stock.Categorie</td>
+                <td>@stock.Line</td>
+                <td>@stock.Price</td>
+                <td>@(stock.Status != null ? stock.Status.Status : "")</td>
+                <td>@stock.percentage</td>
+                <td>@stock.CantidadStock</td>
+                <td><a href="#!user"><img width="50" height="50" class="circle" src="@stock.Image"></a></td>
+                <td><a href="/Stock/Edit/@stock.Id"><i class="small material-icons">mode_edit</i></td>
+                <td><a href="/Stock/Delete/@stock.Id"><i class="small material-icons">delete</i></td>
+                <td><a href="#!user"><img width="50" height="50" class="circle" src="~/Content/ProductsImages/EcoTwist500mlVioleta.jpg"></a></td>
+            </tr>
             }
         </tbody>
     </table>

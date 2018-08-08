@@ -65,7 +65,7 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var ClientToEdit = db.Clients.Find(client.Id);
+                var ClientToEdit = db.Clients.Find(client.ClientId);
                 db.Entry(ClientToEdit).CurrentValues.SetValues(client);
                 db.SaveChanges();
             }

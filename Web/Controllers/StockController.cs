@@ -24,7 +24,7 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 viewModel.Products = db.Products.ToList();
-                viewModel.PublicationStatus = db.PublicationStatuses.ToList();
+                viewModel.StockStatus = db.StockStatuses.ToList();
                 viewModel.Discounts = db.Discounts.ToList();
             }
 
@@ -69,16 +69,16 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var stock = db.Stock.Include(s => s.Product).FirstOrDefault(s => s.Id == id);
+                var stock = db.Stock.Include(s => s.Product).FirstOrDefault(s => s.StockId == id);
                 var products = db.Products.ToList();
-                var publicationStatus = db.PublicationStatuses.ToList();
+                var StockStatus = db.StockStatuses.ToList();
                 var discounts = db.Discounts.ToList();
 
                 var viewModel = new StockViewModel
                 {
                     Stock = stock,
                     Products = products,
-                    PublicationStatus = publicationStatus,
+                    StockStatus = StockStatus,
                     Discounts = discounts
                 };
                 return View("../Dashboard/Stock/Edit", viewModel);
@@ -90,7 +90,7 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var StockToEdit = db.Stock.Find(stock.Id);
+                var StockToEdit = db.Stock.Find(stock.StockId);
                 db.Entry(StockToEdit).CurrentValues.SetValues(stock);
                 db.SaveChanges();
             }
@@ -103,7 +103,7 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                stock = db.Stock.Include(s => s.Product)
-                               .Include(s => s.Status)
+                               .Include(s => s.StockStatus)
                                .ToList();
             }
             return View("../Dashboard/Stock/Index", stock);

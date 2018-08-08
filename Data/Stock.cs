@@ -1,39 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data
 {
     public class Stock
     {
         [Key]
-        public int Id { get; set; }
-        [Display(Name = "Capacidad")]
-        public string Capacidad { get; set; }
-        [Display(Name = "Color")]
-        public string Color { get; set; }
-        [Display(Name = "Dimensiones")]
-        public string Measurements { get; set; }
-        [Display(Name = "Categoria")]
-        public string Categorie { get; set; }
-        [Display(Name = "Linea")]
-        public string Line { get; set; }
+        public int StockId { get; set; }
         [Display(Name = "Precio")]
         public decimal Price { get; set; }
-        [Display(Name = "Stock")]
-        public int CantidadStock { get; set; }
+        [Display(Name = "Color")]
+        public string Color { get; set; }
+        [Display(Name = "Peso")]
+        public decimal? Weight { get; set; }
+        [Display(Name = "Largo")]
+        public decimal? Lenght { get; set; }
+        [Display(Name = "Ancho")]
+        public decimal? Width { get; set; }
+        [Display(Name = "Altura")]
+        public decimal? Height { get; set; }
+        [Display(Name = "Diametro")]
+        public decimal? Diameter { get; set; }
+        [Display(Name = "Capacidad")]
+        public decimal? Capacity { get; set; }
+        [Display(Name = "Cantidad")]
+        public int Quantity { get; set; }
         [Display(Name = "Imagen URL")]
         public string Image { get; set; }
 
+        public ICollection<ShoppingCart> ShoppingCarts { get; set; }
+
         public int? ProductId { get; set; }
         public virtual Product Product { get; set; }
-        public int? StatusId { get; set; }
-        public virtual PublicationStatus Status { get; set; }
         public int? DiscountId { get; set; }
-        public virtual Discount percentage { get; set;}
+        public virtual Discount Discount { get; set; }
+        public int? CategorieId { get; set; }
+        public virtual Categorie Categorie { get; set; }
+        public int? LineId { get; set; }
+        public virtual Line Line { get; set; }
+        public int? StockStatusId { get; set; }
+        public virtual StockStatus StockStatus { get; set; }
     }
 }
