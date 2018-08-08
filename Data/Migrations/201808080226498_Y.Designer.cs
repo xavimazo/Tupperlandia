@@ -7,13 +7,13 @@ namespace Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class modifyinStockproperties : IMigrationMetadata
+    public sealed partial class Y : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(modifyinStockproperties));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Y));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804070219126_modify in Stock properties"; }
+            get { return "201808080226498_Y"; }
         }
         
         string IMigrationMetadata.Source

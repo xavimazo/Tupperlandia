@@ -25,7 +25,7 @@ namespace Tupperware_e_commerce.Controllers
             {
                 viewModel.Products = db.Products.ToList();
                 viewModel.StockStatus = db.StockStatuses.ToList();
-                viewModel.Discounts = db.Discounts.ToList();
+                //viewModel.Discounts = db.Discounts.ToList();
             }
 
             return View("../Dashboard/Stock/Create", viewModel);
@@ -72,14 +72,14 @@ namespace Tupperware_e_commerce.Controllers
                 var stock = db.Stock.Include(s => s.Product).FirstOrDefault(s => s.StockId == id);
                 var products = db.Products.ToList();
                 var StockStatus = db.StockStatuses.ToList();
-                var discounts = db.Discounts.ToList();
+                //var discounts = db.Discounts.ToList();
 
                 var viewModel = new StockViewModel
                 {
                     Stock = stock,
                     Products = products,
                     StockStatus = StockStatus,
-                    Discounts = discounts
+                    //Discounts = discounts
                 };
                 return View("../Dashboard/Stock/Edit", viewModel);
             }

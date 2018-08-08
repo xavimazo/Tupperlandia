@@ -75,141 +75,21 @@
     <Compile Include="Discount.cs" />
     <Compile Include="Dispatch.cs" />
     <Compile Include="Line.cs" />
-    <Compile Include="Migrations\201803170322282_original tables.cs" />
-    <Compile Include="Migrations\201803170322282_original tables.Designer.cs">
-      <DependentUpon>201803170322282_original tables.cs</DependentUpon>
+    <Compile Include="Migrations\201808080222210_x.cs" />
+    <Compile Include="Migrations\201808080222210_x.Designer.cs">
+      <DependentUpon>201808080222210_x.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803171250042_Add IMG - VARIATION TYPE.cs" />
-    <Compile Include="Migrations\201803171250042_Add IMG - VARIATION TYPE.Designer.cs">
-      <DependentUpon>201803171250042_Add IMG - VARIATION TYPE.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803171344106_Add variationSize and IMG.cs" />
-    <Compile Include="Migrations\201803171344106_Add variationSize and IMG.Designer.cs">
-      <DependentUpon>201803171344106_Add variationSize and IMG.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803171442500_Primary Key.cs" />
-    <Compile Include="Migrations\201803171442500_Primary Key.Designer.cs">
-      <DependentUpon>201803171442500_Primary Key.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804021811350_adding client.cs" />
-    <Compile Include="Migrations\201804021811350_adding client.Designer.cs">
-      <DependentUpon>201804021811350_adding client.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804022110407_Adding Address.cs" />
-    <Compile Include="Migrations\201804022110407_Adding Address.Designer.cs">
-      <DependentUpon>201804022110407_Adding Address.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804022244006_Adding sales.cs" />
-    <Compile Include="Migrations\201804022244006_Adding sales.Designer.cs">
-      <DependentUpon>201804022244006_Adding sales.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804022331222_datetime.cs" />
-    <Compile Include="Migrations\201804022331222_datetime.Designer.cs">
-      <DependentUpon>201804022331222_datetime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804070219126_modify in Stock properties.cs" />
-    <Compile Include="Migrations\201804070219126_modify in Stock properties.Designer.cs">
-      <DependentUpon>201804070219126_modify in Stock properties.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804291629273_Adding FKs.cs" />
-    <Compile Include="Migrations\201804291629273_Adding FKs.Designer.cs">
-      <DependentUpon>201804291629273_Adding FKs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804291640375_adding image.cs" />
-    <Compile Include="Migrations\201804291640375_adding image.Designer.cs">
-      <DependentUpon>201804291640375_adding image.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804291735189_addingmondel.cs" />
-    <Compile Include="Migrations\201804291735189_addingmondel.Designer.cs">
-      <DependentUpon>201804291735189_addingmondel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804291741146_key.cs" />
-    <Compile Include="Migrations\201804291741146_key.Designer.cs">
-      <DependentUpon>201804291741146_key.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804291751132_key3.cs" />
-    <Compile Include="Migrations\201804291751132_key3.Designer.cs">
-      <DependentUpon>201804291751132_key3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804291755366_key2.cs" />
-    <Compile Include="Migrations\201804291755366_key2.Designer.cs">
-      <DependentUpon>201804291755366_key2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804291813276_key4.cs" />
-    <Compile Include="Migrations\201804291813276_key4.Designer.cs">
-      <DependentUpon>201804291813276_key4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804291922033_deletedvariations.cs" />
-    <Compile Include="Migrations\201804291922033_deletedvariations.Designer.cs">
-      <DependentUpon>201804291922033_deletedvariations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804292249300_changegroupforcategories.cs" />
-    <Compile Include="Migrations\201804292249300_changegroupforcategories.Designer.cs">
-      <DependentUpon>201804292249300_changegroupforcategories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804292302581_capacity in stock.cs" />
-    <Compile Include="Migrations\201804292302581_capacity in stock.Designer.cs">
-      <DependentUpon>201804292302581_capacity in stock.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804292322546_add composition and description.cs" />
-    <Compile Include="Migrations\201804292322546_add composition and description.Designer.cs">
-      <DependentUpon>201804292322546_add composition and description.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804292347178_addingdescriptions.cs" />
-    <Compile Include="Migrations\201804292347178_addingdescriptions.Designer.cs">
-      <DependentUpon>201804292347178_addingdescriptions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805012054155_adding publication statuses.cs" />
-    <Compile Include="Migrations\201805012054155_adding publication statuses.Designer.cs">
-      <DependentUpon>201805012054155_adding publication statuses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805012137408_status publication.cs" />
-    <Compile Include="Migrations\201805012137408_status publication.Designer.cs">
-      <DependentUpon>201805012137408_status publication.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805012300402_adding discount.cs" />
-    <Compile Include="Migrations\201805012300402_adding discount.Designer.cs">
-      <DependentUpon>201805012300402_adding discount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805020004350_status.cs" />
-    <Compile Include="Migrations\201805020004350_status.Designer.cs">
-      <DependentUpon>201805020004350_status.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806091741543_Adding Social Client.cs" />
-    <Compile Include="Migrations\201806091741543_Adding Social Client.Designer.cs">
-      <DependentUpon>201806091741543_Adding Social Client.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806092255178_adding info without dispatch.cs" />
-    <Compile Include="Migrations\201806092255178_adding info without dispatch.Designer.cs">
-      <DependentUpon>201806092255178_adding info without dispatch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806092257313_adding Dispatch.cs" />
-    <Compile Include="Migrations\201806092257313_adding Dispatch.Designer.cs">
-      <DependentUpon>201806092257313_adding Dispatch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806100219104_Dispatch controller.cs" />
-    <Compile Include="Migrations\201806100219104_Dispatch controller.Designer.cs">
-      <DependentUpon>201806100219104_Dispatch controller.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806100257481_fixes on sale.cs" />
-    <Compile Include="Migrations\201806100257481_fixes on sale.Designer.cs">
-      <DependentUpon>201806100257481_fixes on sale.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806100351498_ResidencyDetail.cs" />
-    <Compile Include="Migrations\201806100351498_ResidencyDetail.Designer.cs">
-      <DependentUpon>201806100351498_ResidencyDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806101945104_adding recomendations propety.cs" />
-    <Compile Include="Migrations\201806101945104_adding recomendations propety.Designer.cs">
-      <DependentUpon>201806101945104_adding recomendations propety.cs</DependentUpon>
+    <Compile Include="Migrations\201808080226498_Y.cs" />
+    <Compile Include="Migrations\201808080226498_Y.Designer.cs">
+      <DependentUpon>201808080226498_Y.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="ShoppingCart.cs" />
+    <Compile Include="Stock.cs" />
     <Compile Include="StockStatus.cs" />
     <Compile Include="TupperwareContext.cs" />
-    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stock.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -217,101 +97,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803170322282_original tables.resx">
-      <DependentUpon>201803170322282_original tables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808080222210_x.resx">
+      <DependentUpon>201808080222210_x.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803171250042_Add IMG - VARIATION TYPE.resx">
-      <DependentUpon>201803171250042_Add IMG - VARIATION TYPE.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803171344106_Add variationSize and IMG.resx">
-      <DependentUpon>201803171344106_Add variationSize and IMG.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803171442500_Primary Key.resx">
-      <DependentUpon>201803171442500_Primary Key.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804021811350_adding client.resx">
-      <DependentUpon>201804021811350_adding client.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804022110407_Adding Address.resx">
-      <DependentUpon>201804022110407_Adding Address.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804022244006_Adding sales.resx">
-      <DependentUpon>201804022244006_Adding sales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804022331222_datetime.resx">
-      <DependentUpon>201804022331222_datetime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804070219126_modify in Stock properties.resx">
-      <DependentUpon>201804070219126_modify in Stock properties.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804291629273_Adding FKs.resx">
-      <DependentUpon>201804291629273_Adding FKs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804291640375_adding image.resx">
-      <DependentUpon>201804291640375_adding image.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804291735189_addingmondel.resx">
-      <DependentUpon>201804291735189_addingmondel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804291741146_key.resx">
-      <DependentUpon>201804291741146_key.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804291751132_key3.resx">
-      <DependentUpon>201804291751132_key3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804291755366_key2.resx">
-      <DependentUpon>201804291755366_key2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804291813276_key4.resx">
-      <DependentUpon>201804291813276_key4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804291922033_deletedvariations.resx">
-      <DependentUpon>201804291922033_deletedvariations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804292249300_changegroupforcategories.resx">
-      <DependentUpon>201804292249300_changegroupforcategories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804292302581_capacity in stock.resx">
-      <DependentUpon>201804292302581_capacity in stock.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804292322546_add composition and description.resx">
-      <DependentUpon>201804292322546_add composition and description.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804292347178_addingdescriptions.resx">
-      <DependentUpon>201804292347178_addingdescriptions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805012054155_adding publication statuses.resx">
-      <DependentUpon>201805012054155_adding publication statuses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805012137408_status publication.resx">
-      <DependentUpon>201805012137408_status publication.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805012300402_adding discount.resx">
-      <DependentUpon>201805012300402_adding discount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805020004350_status.resx">
-      <DependentUpon>201805020004350_status.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806091741543_Adding Social Client.resx">
-      <DependentUpon>201806091741543_Adding Social Client.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806092255178_adding info without dispatch.resx">
-      <DependentUpon>201806092255178_adding info without dispatch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806092257313_adding Dispatch.resx">
-      <DependentUpon>201806092257313_adding Dispatch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806100219104_Dispatch controller.resx">
-      <DependentUpon>201806100219104_Dispatch controller.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806100257481_fixes on sale.resx">
-      <DependentUpon>201806100257481_fixes on sale.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806100351498_ResidencyDetail.resx">
-      <DependentUpon>201806100351498_ResidencyDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806101945104_adding recomendations propety.resx">
-      <DependentUpon>201806101945104_adding recomendations propety.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808080226498_Y.resx">
+      <DependentUpon>201808080226498_Y.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
