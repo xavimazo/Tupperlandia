@@ -83,6 +83,14 @@
     <Compile Include="Migrations\201808080226498_Y.Designer.cs">
       <DependentUpon>201808080226498_Y.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808120002175_correccionClient-User.cs" />
+    <Compile Include="Migrations\201808120002175_correccionClient-User.Designer.cs">
+      <DependentUpon>201808120002175_correccionClient-User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808120059379_AddingClientName.cs" />
+    <Compile Include="Migrations\201808120059379_AddingClientName.Designer.cs">
+      <DependentUpon>201808120059379_AddingClientName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ShoppingCart.cs" />
@@ -102,6 +110,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808080226498_Y.resx">
       <DependentUpon>201808080226498_Y.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808120002175_correccionClient-User.resx">
+      <DependentUpon>201808120002175_correccionClient-User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808120059379_AddingClientName.resx">
+      <DependentUpon>201808120059379_AddingClientName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

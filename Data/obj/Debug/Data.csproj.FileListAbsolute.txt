@@ -73,3 +73,6 @@ C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.pdb
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.x.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.csproj.GenerateResource.Cache
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.Y.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.correccionClientUser.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.AddingClientName.resources
