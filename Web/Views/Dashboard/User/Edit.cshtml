@@ -1,0 +1,30 @@
+﻿@model Data.User
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="container">
+    <div class="row wrapper">
+        <form class="col s12" action="/User/Edit" method="post">
+            <br />
+            @Html.HiddenFor(x => x.UserId)
+            <div class="row">
+                <div class="input-field col s3">
+                    @Html.EditorFor(x => x.Name)
+                    @Html.LabelFor(x => x.Name)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.LastName)
+                    @Html.LabelFor(x => x.LastName)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.Email)
+                    @Html.LabelFor(x => x.Email)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.Password)
+                    @Html.LabelFor(x => x.Password)
+                </div><div class="input-field col s3">
+                    <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">mode_edit</i>Editar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

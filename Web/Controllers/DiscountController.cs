@@ -59,7 +59,7 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var discount = db.Discounts.Find(id);
-                return View("../Dashboard/Discount/Edit");
+                return View("../Dashboard/Discount/Edit", discount);
             }
         }
 

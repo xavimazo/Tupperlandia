@@ -57,7 +57,7 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var dispatch = db.Dispatches.Find(id);
-                return View("../Dashboard/Dispatches/Edit");
+                return View("../Dashboard/Dispatches/Edit", dispatch);
             }
         }
 

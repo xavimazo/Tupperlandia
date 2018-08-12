@@ -91,6 +91,14 @@
     <Compile Include="Migrations\201808120059379_AddingClientName.Designer.cs">
       <DependentUpon>201808120059379_AddingClientName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808120117372_ChangeInClient.cs" />
+    <Compile Include="Migrations\201808120117372_ChangeInClient.Designer.cs">
+      <DependentUpon>201808120117372_ChangeInClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808120122202_nulleableProperties.cs" />
+    <Compile Include="Migrations\201808120122202_nulleableProperties.Designer.cs">
+      <DependentUpon>201808120122202_nulleableProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ShoppingCart.cs" />
@@ -116,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808120059379_AddingClientName.resx">
       <DependentUpon>201808120059379_AddingClientName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808120117372_ChangeInClient.resx">
+      <DependentUpon>201808120117372_ChangeInClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808120122202_nulleableProperties.resx">
+      <DependentUpon>201808120122202_nulleableProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

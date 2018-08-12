@@ -10,40 +10,49 @@
 <div class="container wrapper">
     <table class="highlight centered wrapper">
         <br />
+        <div class="center">
+            <a href="/User/Create" class="waves-effect waves-light btn"><i class="material-icons left">person_add</i>Crear cliente</a>
+        </div>
+        <br />
         <thead>
             <tr>
-                <th>ID</th>
+                <th>ID de cliente</th>
                 <th>Nombre del cliente</th>
+                <th>Apellido del cliente</th>
+                <th>DNI</th>
                 <th>Contacto</th>
+                <th>Contacto2</th>
                 <th>Calle</th>
-                <th>Numeracion</th>
-                <th>Departamento</th>
+                <th>Altura</th>
                 <th>Piso</th>
-                <th>Localidad</th>
-                <th>Email</th>
-                @*<th>Social</th>*@
+                <th>Departamento</th>
+                <th>Ciudad</th>
+                <th>Provincia</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var client in Model)
-            {
+        {
             <tr>
-                <td>@client.Id</td>
-                <td>@client.NombreDelCliente</td>
-                <td>@client.ContactoCliente</td>
-                <td>@client.Calle</td>
-                <td>@client.Numeracion</td>
-                <td>@client.Departamento</td>
-                <td>@client.Piso</td>
-                <td>@client.Localidad</td>
-                <td>@client.EmailCliente</td>
+                <td>@client.ClientId</td>
+                <td>@client.ClientName</td>
+                <td>@client.ClientLastName</td>
+                <td>@client.DNI</td>
+                <td>@client.Contact</td>
+                <td>@client.Contact2</td>
+                <td>@client.AddressStreet</td>
+                <td>@client.AddressNumber</td>
+                <td>@client.AddressFlat</td>
+                <td>@client.AddressDepartment</td>
+                <td>@client.City</td>
+                <td>@client.Province</td>
                 @*<td>@client.SocialClient</td>*@
-                <td><a href="/Client/Edit/@client.Id"><i class="small material-icons">mode_edit</i></a></td>
-                <td><a href="/Client/Delete/@client.Id"><i class="small material-icons">delete</i></a></td>
+                <td><a href="/Client/Edit/@client.ClientId"><i class="small material-icons">mode_edit</i></a></td>
+                <td><a href="/Client/Delete/@client.ClientId"><i class="small material-icons">delete</i></a></td>
             </tr>
-            }
+    }
         </tbody>
     </table>
 </div>

@@ -5,6 +5,10 @@
 <div class="container wrapper">
     <table class="highlight centered wrapper">
         <thead>
+            <br />
+            <div class="center">
+                <a href="/Dispatch/Create" class="waves-effect waves-light btn"><i class="material-icons left">gps_fixed</i>Crear espacho</a>
+            </div>
             <tr>
                 <th>ID</th>
                 <th>Tipo de entrega</th>
@@ -16,10 +20,10 @@
             @foreach (var Dispatch in Model)
             {
                 <tr>
-                    <td>@Dispatch.Id</td>
-                    <td>@Dispatch.DispatchType</td>
-                    <td><a href="/Dispatch/Edit/@Dispatch.Id"><i class="small material-icons">mode_edit</i></a></td>
-                    <td><a href="/Dispatch/Delete/@Dispatch.Id"><i class="small material-icons">delete</i></a></td>
+                    <td>@Dispatch.DispatchId</td>
+                    <td>@Dispatch.DispatchDescription</td>
+                    <td><a href="/Dispatch/Edit/@Dispatch.DispatchId"><i class="small material-icons">mode_edit</i></a></td>
+                    <td><a href="/Dispatch/Delete/@Dispatch.DispatchId"><i class="small material-icons">delete</i></a></td>
                 </tr>
             }
         </tbody>

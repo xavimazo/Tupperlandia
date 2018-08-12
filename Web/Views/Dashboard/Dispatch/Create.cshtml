@@ -6,11 +6,11 @@
     <div class="row wrapper">
         <form class="col s12" action="/Dispatch/Create" method="post">
             <br />
-            @Html.HiddenFor(x => x.Id)
+            @Html.HiddenFor(x => x.DispatchId)
             <div class="row">
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.DispatchType)
-                    @Html.LabelFor(x => x.DispatchType)
+                <div class="input-field col s9">
+                    @Html.EditorFor(x => x.DispatchDescription)
+                    @Html.LabelFor(x => x.DispatchDescription)
                 </div>
                 <div class="input-field col s3">
                     <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">save</i>Guardar tipo de despacho</button>

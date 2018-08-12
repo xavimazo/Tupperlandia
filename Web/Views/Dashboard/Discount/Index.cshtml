@@ -5,6 +5,10 @@
 <div class="container wrapper">
     <table class="highlight centered">
         <br />
+        <div class="center">
+            <a href="/Discount/Create" class="waves-effect waves-light btn"><i class="material-icons left">local_offer</i>Crear descuento</a>
+        </div>
+        <br />
         <thead>
             <tr>
                 <th>ID</th>
@@ -15,14 +19,14 @@
         </thead>
         <tbody>
             @foreach (var discount in Model)
-            {
-                <tr>
-                    <td>@discount.Id</td>
-                    <td>@discount.percentage</td>
-                    <td><a href="/Discount/Edit/@discount.Id"><i class="small material-icons">mode_edit</i></a></td>
-                    <td><a href="/Discount/Delete/@discount.Id"><i class="small material-icons">delete</i></a></td>
-                </tr>
-            }
+        {
+            <tr>
+                <td>@discount.DiscountId</td>
+                <td>@discount.DiscountPercentage</td>
+                <td><a href="/Discount/Edit/@discount.DiscountId"><i class="small material-icons">mode_edit</i></a></td>
+                <td><a href="/Discount/Delete/@discount.DiscountId"><i class="small material-icons">delete</i></a></td>
+            </tr>
+    }
         </tbody>
     </table>
 </div>

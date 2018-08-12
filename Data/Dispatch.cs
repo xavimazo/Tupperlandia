@@ -6,7 +6,7 @@ namespace Data
     {
         [Key]
         public int DispatchId { get; set; }
-        [Display(Name = "Porcentaje de descuento")]
+        [Display(Name = "Punto de retiro")]
         public string DispatchDescription { get; set; }
     }
 }

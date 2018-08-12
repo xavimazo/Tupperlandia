@@ -11,22 +11,20 @@ namespace Data
         public string ClientName { get; set; }
         [Display(Name = "Apellido")]
         public string ClientLastName { get; set; }
-        [Display(Name = "Direccion de envio")]
-        public string SendAdrress { get; set; }
-        [Display(Name = "Descripcion de envio")]
-        public string SendDescription { get; set; }
+        [Display(Name = "Descripcion adicional")]
+        public string SendAdditionalDescription { get; set; }
         [Display(Name = "DNI")]
         public int DNI { get; set; }
         [Display(Name = "Contacto")]
         public int Contact { get; set; }
         [Display(Name = "Contacto2")]
-        public int Contact2 { get; set; }
+        public int? Contact2 { get; set; }
         [Display(Name = "Calle")]
         public string AddressStreet { get; set; }
         [Display(Name = "Numero")]
-        public int AddressNumber { get; set; }
+        public int? AddressNumber { get; set; }
         [Display(Name = "Departamento")]
-        public int AddressDepartment { get; set; }
+        public int? AddressDepartment { get; set; }
         [Display(Name = "Piso")]
         public string AddressFlat { get; set; }
         [Display(Name = "Localidad")]

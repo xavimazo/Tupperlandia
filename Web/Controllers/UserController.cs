@@ -5,27 +5,29 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Tupperware_e_commerce.Models;
+using System.Data.Entity;
 
 namespace Tupperware_e_commerce.Controllers
 {
-    public class ClientController : Controller
+    public class UserController : Controller
     {
         // GET: Client
         public ActionResult Create()
         {
-            var model = new Client();
-            return View("../Dashboard/Client/Create", model);
+            var model = new User();
+            return View("../Dashboard/User/Create", model);
         }
 
         [HttpPost]
-        public ActionResult Create(Client client)
+        public ActionResult Create(User user)
         {
             using (var db = new TupperwareContext())
             {
-                db.Clients.Add(client);
+                db.Users.Add(user);
                 db.SaveChanges();
             }
-            Session["Message"] = "El cliente fue guardado exitosamente";
+            Session["Message"] = "El usuario fue guardado exitosamente";
             return RedirectToAction("Index");
         }
 
@@ -34,8 +36,8 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var client = db.Clients.Find(id);
-                return View("../Dashboard/Client/Delete", client);
+                var user = db.Users.Find(id);
+                return View("../Dashboard/User/Delete", user);
             }
         }
 
@@ -43,8 +45,8 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var ClientToRemove = db.Clients.Find(id);
-                db.Clients.Remove(ClientToRemove);
+                var UserToRemove = db.Users.Find(id);
+                db.Users.Remove(UserToRemove);
                 db.SaveChanges();
             }
             return RedirectToAction("Index");
@@ -55,18 +57,18 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var client = db.Clients.Find(id);
-                return View("../Dashboard/Client/Edit", client);
+                var user = db.Users.FirstOrDefault(s => s.UserId == id);
+                return View("../Dashboard/User/Edit", user);
             }
         }
 
         [HttpPost]
-        public ActionResult Edit(Client client)
-        {
+        public ActionResult Edit(User user)
+            {
             using (var db = new TupperwareContext())
             {
-                var ClientToEdit = db.Clients.Find(client.ClientId);
-                db.Entry(ClientToEdit).CurrentValues.SetValues(client);
+                var UserToEdit = db.Users.Find(user.UserId);
+                db.Entry(UserToEdit).CurrentValues.SetValues(user);
                 db.SaveChanges();
             }
             return RedirectToAction("Index");
@@ -74,12 +76,12 @@ namespace Tupperware_e_commerce.Controllers
 
         public ActionResult Index()
         {
-            var clients = new List<Client>();
+            var user = new List<User>();
             using (var db = new TupperwareContext())
             {
-                clients = db.Clients.ToList();
+                user = db.Users.ToList();
             }
-                return View("../Dashboard/Client/Index", clients);
+                return View("../Dashboard/User/Index", user);
         }
     }
 }

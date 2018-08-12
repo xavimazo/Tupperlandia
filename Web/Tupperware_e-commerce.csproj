@@ -142,6 +142,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DiscountController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DispatchController.cs" />
@@ -153,6 +155,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Models\StockViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -292,6 +295,10 @@
     <Content Include="Views\Dashboard\Dispatch\Delete.cshtml" />
     <Content Include="Views\Dashboard\Dispatch\Edit.cshtml" />
     <Content Include="Views\Dashboard\Dispatch\Index.cshtml" />
+    <Content Include="Views\Dashboard\User\Create.cshtml" />
+    <Content Include="Views\Dashboard\User\Delete.cshtml" />
+    <Content Include="Views\Dashboard\User\Edit.cshtml" />
+    <Content Include="Views\Dashboard\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

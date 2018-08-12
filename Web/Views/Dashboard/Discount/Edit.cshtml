@@ -6,12 +6,12 @@
     <div class="row wrapper">
         <form class="col s12" action="/Discount/Edit" method="post">
             <br />
-            @Html.HiddenFor(x => x.Id)
+            @Html.HiddenFor(x => x.DiscountId)
             <div class="row">
                 <div class="row">
                     <div class="input-field col s3">
-                        @Html.EditorFor(x => x.percentage)
-                        @Html.LabelFor(x => x.percentage)
+                        @Html.EditorFor(x => x.DiscountPercentage)
+                        @Html.LabelFor(x => x.DiscountPercentage)
                     </div>
                     <div class="input-field col s3">
                         <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">save</i>Editar producto</button>

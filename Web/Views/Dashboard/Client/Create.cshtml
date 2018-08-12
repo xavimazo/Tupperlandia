@@ -8,42 +8,46 @@
             <br />
             <div class="row">
                 <div class="input-field col s3">
+                    @Html.EditorFor(x => x.ClientId)
+                    @Html.LabelFor(x => x.ClientId)
+                </div>
+                <div class="input-field col s3">
                     @Html.EditorFor(x => x.ClientName)
                     @Html.LabelFor(x => x.ClientName)
-                </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Calle)
-                    @Html.LabelFor(x => x.Calle)
-                </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Localidad)
-                    @Html.LabelFor(x => x.Localidad)
-                </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Numeracion)
-                    @Html.LabelFor(x => x.Numeracion)
-                </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Departamento)
-                    @Html.LabelFor(x => x.Departamento)
-                </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Piso)
-                    @Html.LabelFor(x => x.Piso)
-                </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.ContactoCliente)
-                    @Html.LabelFor(x => x.ContactoCliente)
-                </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.EmailCliente)
-                    @Html.LabelFor(x => x.EmailCliente)
-                </div>
-                @*<div class="input-field col s3">
-                    @Html.EditorFor(x => x.SocialClient)
-                    @Html.LabelFor(x => x.SocialClient)
-                </div>*@
-                <div class="input-field col s3">
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.ClientLastName)
+                    @Html.LabelFor(x => x.ClientLastName)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.SendAdditionalDescription)
+                    @Html.LabelFor(x => x.SendAdditionalDescription)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.DNI)
+                    @Html.LabelFor(x => x.DNI)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.Contact)
+                    @Html.LabelFor(x => x.Contact)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.Contact2)
+                    @Html.LabelFor(x => x.Contact2)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.AddressStreet)
+                    @Html.LabelFor(x => x.AddressStreet)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.AddressNumber)
+                    @Html.LabelFor(x => x.AddressNumber)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.AddressDepartment)
+                    @Html.LabelFor(x => x.AddressDepartment)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.AddressFlat)
+                    @Html.LabelFor(x => x.AddressFlat)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.City)
+                    @Html.LabelFor(x => x.City)
+                </div><div class="input-field col s3">
+                    @Html.EditorFor(x => x.Province)
+                    @Html.LabelFor(x => x.Province)
+                </div><div class="input-field col s3">
                     <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">save</i>Guardar producto</button>
                 </div>
             </div>
