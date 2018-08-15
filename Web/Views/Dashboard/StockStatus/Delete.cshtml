@@ -1,0 +1,9 @@
+﻿@model Data.StockStatus
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+Esta seguro que desea eliminar el Estado de Publicacion @Model.StockStatusDescription?
+
+<a href="/PublicationStatus/DeleteConfirmation/@Model.StockStatusId" class="waves-effect waves-light btn col s6">Eliminar</a>
+<a href="/PublicationStatus/Index" class="waves-effect waves-light btn col s6">Cancelar</a>

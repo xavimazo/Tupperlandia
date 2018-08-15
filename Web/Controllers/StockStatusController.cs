@@ -17,7 +17,7 @@ namespace Tupperware_e_commerce.Controllers
         public ActionResult Create()
         {
             var model = new StockStatus();
-            return View("../Dashboard/PublicationStatus/Create", model);
+            return View("../Dashboard/StockStatus/Create", model);
         }
 
         [HttpPost]
@@ -38,7 +38,7 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var PublicationStatus = db.StockStatuses.Find(id);
-                return View("../Dashboard/PublicationStatus/Delete", PublicationStatus);
+                return View("../Dashboard/StockStatus/Delete", PublicationStatus);
             }
         }
 
@@ -59,7 +59,7 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var PublicationStatus = db.StockStatuses.Find(id);
-                return View("../Dashboard/PublicationStatus/Edit");
+                return View("../Dashboard/StockStatus/Edit");
             }
         }
 
@@ -82,7 +82,7 @@ namespace Tupperware_e_commerce.Controllers
             {
                 PublicationStatus = db.StockStatuses.ToList();
             }
-            return View("../Dashboard/PublicationStatus/Index", PublicationStatus);
+            return View("../Dashboard/StockStatus/Index", PublicationStatus);
         }
     }
 }

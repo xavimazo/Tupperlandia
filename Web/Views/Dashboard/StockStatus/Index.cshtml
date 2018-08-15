@@ -1,0 +1,32 @@
+﻿@model IList<Data.StockStatus>
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="container wrapper">
+    <table class="highlight centered">
+        <br />
+        <div class="center">
+            <a href="/StockStatus/Create" class="waves-effect waves-light btn"><i class="material-icons left">power_settings_new</i>Crear estado de publicacion</a>
+        </div>
+        <br />
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de publicación</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var publicationStatus in Model)
+        {
+            <tr>
+                <td>@publicationStatus.StockStatusId</td>
+            <td>@publicationStatus.StockStatusDescription</td>
+        <td><a href="/StockStatus/Edit/@publicationStatus.StockStatusId"><i class="small material-icons">mode_edit</i></a></td>
+        <td><a href="/StockStatus/Delete/@publicationStatus.StockStatusId"><i class="small material-icons">delete</i></a></td>
+    </tr>
+}
+        </tbody>
+    </table>
+</div>

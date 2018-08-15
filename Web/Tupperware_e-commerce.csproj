@@ -283,10 +283,10 @@
     <Content Include="Views\Dashboard\Sale\Create.cshtml" />
     <Content Include="Views\Dashboard\Sale\Edit.cshtml" />
     <Content Include="Views\Dashboard\Sale\Delete.cshtml" />
-    <Content Include="Views\Dashboard\PublicationStatus\Index.cshtml" />
-    <Content Include="Views\Dashboard\PublicationStatus\Create.cshtml" />
-    <Content Include="Views\Dashboard\PublicationStatus\Delete.cshtml" />
-    <Content Include="Views\Dashboard\PublicationStatus\Edit.cshtml" />
+    <Content Include="Views\Dashboard\StockStatus\Index.cshtml" />
+    <Content Include="Views\Dashboard\StockStatus\Create.cshtml" />
+    <Content Include="Views\Dashboard\StockStatus\Delete.cshtml" />
+    <Content Include="Views\Dashboard\StockStatus\Edit.cshtml" />
     <Content Include="Views\Dashboard\Discount\Index.cshtml" />
     <Content Include="Views\Dashboard\Discount\Delete.cshtml" />
     <Content Include="Views\Dashboard\Discount\Create.cshtml" />

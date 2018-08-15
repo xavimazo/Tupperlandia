@@ -15,7 +15,7 @@ namespace Tupperware_e_commerce.Controllers
         public ActionResult Create()
         {
             var model = new Dispatch();
-            return View("../Dashboard/Dispatch/Create", model);
+             return View("../Dashboard/Dispatch/Create", model);
         }
 
         [HttpPost]
@@ -57,7 +57,7 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var dispatch = db.Dispatches.Find(id);
-                return View("../Dashboard/Dispatches/Edit", dispatch);
+                return View("../Dashboard/Dispatch/Edit", dispatch);
             }
         }
 

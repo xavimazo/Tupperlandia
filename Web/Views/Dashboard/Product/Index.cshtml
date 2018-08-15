@@ -5,6 +5,11 @@
 <div class="container wrapper">
     <table class="highlight centered wrapper"
         <thead>
+            <br />
+            <div class="center">
+                <a href="/Product/Create" class="waves-effect waves-light btn"><i class="material-icons left">style</i>Crear producto</a>
+            </div>
+            <br />
             <tr>
                 <th>ID</th>
                 <th>Nombre del producto</th>
@@ -20,14 +25,14 @@
             @foreach (var product in Model)
             {
                 <tr>
-                    <td>@product.Id</td>
-                    <td>@product.Name</td>
-                    <td>@product.Composition</td>
+                    <td>@product.ProductId</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.ProductComposition</td>
                     <td>@product.ShortDescription</td>
-                    <td>@product.LargeDescription</td>
+                    <td>@product.FullDescription</td>
                     <td>@product.Recomendations</td>
-                    <td><a href="/Product/Edit/@product.Id"><i class="small material-icons">mode_edit</i></a></td>
-                    <td><a href="/Product/Delete/@product.Id"><i class="small material-icons">delete</i></a></td>
+                    <td><a href="/Product/Edit/@product.ProductId"><i class="small material-icons">mode_edit</i></a></td>
+                    <td><a href="/Product/Delete/@product.ProductId"><i class="small material-icons">delete</i></a></td>
                 </tr>
             }
         </tbody>
