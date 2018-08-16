@@ -73,8 +73,12 @@ C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.pdb
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.x.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.csproj.GenerateResource.Cache
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.Y.resources
-C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.correccionClientUser.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.AddingClientName.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.ChangeInClient.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.nulleableProperties.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.addingFullDescriptionClass.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.ChangeProductDescriptionName.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.AddingProductDescription.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.addingtableproductanddescription.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.tupperwarecontext.resources

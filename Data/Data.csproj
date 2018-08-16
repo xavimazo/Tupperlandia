@@ -99,8 +99,29 @@
     <Compile Include="Migrations\201808120122202_nulleableProperties.Designer.cs">
       <DependentUpon>201808120122202_nulleableProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808150008426_addingFullDescriptionClass.cs" />
+    <Compile Include="Migrations\201808150008426_addingFullDescriptionClass.Designer.cs">
+      <DependentUpon>201808150008426_addingFullDescriptionClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808150022185_ChangeProductDescriptionName.cs" />
+    <Compile Include="Migrations\201808150022185_ChangeProductDescriptionName.Designer.cs">
+      <DependentUpon>201808150022185_ChangeProductDescriptionName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808160100565_AddingProductDescription.cs" />
+    <Compile Include="Migrations\201808160100565_AddingProductDescription.Designer.cs">
+      <DependentUpon>201808160100565_AddingProductDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808160102282_addingtableproductanddescription.cs" />
+    <Compile Include="Migrations\201808160102282_addingtableproductanddescription.Designer.cs">
+      <DependentUpon>201808160102282_addingtableproductanddescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808160142011_tupperwarecontext.cs" />
+    <Compile Include="Migrations\201808160142011_tupperwarecontext.Designer.cs">
+      <DependentUpon>201808160142011_tupperwarecontext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductDescription.cs" />
     <Compile Include="ShoppingCart.cs" />
     <Compile Include="Stock.cs" />
     <Compile Include="StockStatus.cs" />
@@ -130,6 +151,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808120122202_nulleableProperties.resx">
       <DependentUpon>201808120122202_nulleableProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808150008426_addingFullDescriptionClass.resx">
+      <DependentUpon>201808150008426_addingFullDescriptionClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808150022185_ChangeProductDescriptionName.resx">
+      <DependentUpon>201808150022185_ChangeProductDescriptionName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808160100565_AddingProductDescription.resx">
+      <DependentUpon>201808160100565_AddingProductDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808160102282_addingtableproductanddescription.resx">
+      <DependentUpon>201808160102282_addingtableproductanddescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808160142011_tupperwarecontext.resx">
+      <DependentUpon>201808160142011_tupperwarecontext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

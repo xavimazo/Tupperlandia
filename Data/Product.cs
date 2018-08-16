@@ -17,6 +17,8 @@ namespace Data
         public string ShortDescription { get; set; }
         [Display(Name = "Recomendaciones")]
         public string Recomendations { get; set; }
+
         public virtual ICollection<Stock> Stock { get; set; }
+        public virtual ICollection<ProductDescription> ProductDescription { get; set; }
     }
 }
