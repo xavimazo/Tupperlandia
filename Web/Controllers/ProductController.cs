@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Tupperware_e_commerce.Models;
 
 namespace Tupperware_e_commerce.Controllers
 {
@@ -14,7 +14,17 @@ namespace Tupperware_e_commerce.Controllers
         public ActionResult Create()
         {
             var model = new Product();
-            return View("../Dashboard/Product/Create", model);
+            var viewModel = new ProductViewModel
+            {
+                Product = model
+            };
+
+            using (var db = new TupperwareContext())
+            {
+                viewModel.Description = db.Descriptions.ToList();
+            }
+
+            return View("../Dashboard/Product/Create", viewModel);
         }
 
         [HttpPost]
@@ -59,15 +69,22 @@ namespace Tupperware_e_commerce.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            using(var db = new TupperwareContext())
+            using (var db = new TupperwareContext())
             {
-                var product = db.Products.Find(id);
-                return View("../Dashboard/Product/Edit", product);
+                var product = db.Products.FirstOrDefault(s => s.ProductId == id);
+                var description = db.Descriptions.ToList();
+
+                var viewModel = new ProductViewModel
+                {
+                    Product = product,
+                    Description = description
+                };
+                return View("../Dashboard/Product/Edit", viewModel);
             }
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(Product product, IList<Description> description)
         {
             using (var db = new TupperwareContext())
             {
@@ -89,6 +106,17 @@ namespace Tupperware_e_commerce.Controllers
             }
 
             return View("../Dashboard/Product/Index", products);
+        }
+
+        public ActionResult SaveDescription(IList<Description> description, int ProductId)
+        {
+            using (var db = new TupperwareContext())
+            {
+                var Product = db.Products.Find(ProductId);
+                db.Entry(Product.Description).CurrentValues.SetValues(description);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
         }
     }
 }

@@ -3,7 +3,7 @@ namespace Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class x : DbMigration
+    public partial class first : DbMigration
     {
         public override void Up()
         {
@@ -21,9 +21,18 @@ namespace Data.Migrations
                 c => new
                     {
                         ClientId = c.Int(nullable: false, identity: true),
-                        SendAdrress = c.String(),
-                        SendDescription = c.String(),
+                        ClientName = c.String(),
+                        ClientLastName = c.String(),
+                        SendAdditionalDescription = c.String(),
                         DNI = c.Int(nullable: false),
+                        Contact = c.Int(nullable: false),
+                        Contact2 = c.Int(),
+                        AddressStreet = c.String(),
+                        AddressNumber = c.Int(),
+                        AddressDepartment = c.Int(),
+                        AddressFlat = c.String(),
+                        City = c.String(),
+                        Province = c.String(),
                         UserId = c.Int(),
                     })
                 .PrimaryKey(t => t.ClientId)
@@ -39,34 +48,18 @@ namespace Data.Migrations
                         LastName = c.String(),
                         Password = c.String(),
                         Email = c.String(),
-                        Contact = c.Int(nullable: false),
-                        Contact2 = c.Int(nullable: false),
-                        AddressStreet = c.String(),
-                        AddressNumber = c.Int(nullable: false),
-                        AddressDepartment = c.Int(nullable: false),
-                        AddressFlat = c.String(),
-                        City = c.String(),
-                        Province = c.String(),
                     })
                 .PrimaryKey(t => t.UserId);
             
             CreateTable(
-                "dbo.Dispatches",
+                "dbo.Descriptions",
                 c => new
                     {
-                        DispatchId = c.Int(nullable: false, identity: true),
-                        DispatchDescription = c.String(),
+                        DescriptionId = c.Int(nullable: false, identity: true),
+                        DescriptionText = c.String(),
+                        DescriptionTitle = c.String(),
                     })
-                .PrimaryKey(t => t.DispatchId);
-            
-            CreateTable(
-                "dbo.Lines",
-                c => new
-                    {
-                        LineId = c.Int(nullable: false, identity: true),
-                        LineDescription = c.String(),
-                    })
-                .PrimaryKey(t => t.LineId);
+                .PrimaryKey(t => t.DescriptionId);
             
             CreateTable(
                 "dbo.Products",
@@ -97,19 +90,40 @@ namespace Data.Migrations
                         Quantity = c.Int(nullable: false),
                         Image = c.String(),
                         ProductId = c.Int(),
+                        DiscountId = c.Int(),
                         CategorieId = c.Int(),
                         LineId = c.Int(),
                         StockStatusId = c.Int(),
                     })
                 .PrimaryKey(t => t.StockId)
                 .ForeignKey("dbo.Categories", t => t.CategorieId)
+                .ForeignKey("dbo.Discounts", t => t.DiscountId)
                 .ForeignKey("dbo.Lines", t => t.LineId)
                 .ForeignKey("dbo.Products", t => t.ProductId)
                 .ForeignKey("dbo.StockStatus", t => t.StockStatusId)
                 .Index(t => t.ProductId)
+                .Index(t => t.DiscountId)
                 .Index(t => t.CategorieId)
                 .Index(t => t.LineId)
                 .Index(t => t.StockStatusId);
+            
+            CreateTable(
+                "dbo.Discounts",
+                c => new
+                    {
+                        DiscountId = c.Int(nullable: false, identity: true),
+                        DiscountPercentage = c.Int(),
+                    })
+                .PrimaryKey(t => t.DiscountId);
+            
+            CreateTable(
+                "dbo.Lines",
+                c => new
+                    {
+                        LineId = c.Int(nullable: false, identity: true),
+                        LineDescription = c.String(),
+                    })
+                .PrimaryKey(t => t.LineId);
             
             CreateTable(
                 "dbo.ShoppingCarts",
@@ -122,8 +136,19 @@ namespace Data.Migrations
                         ClientId = c.Int(),
                     })
                 .PrimaryKey(t => t.CartId)
+                .ForeignKey("dbo.Clients", t => t.ClientId)
                 .ForeignKey("dbo.Dispatches", t => t.DispatchId)
-                .Index(t => t.DispatchId);
+                .Index(t => t.DispatchId)
+                .Index(t => t.ClientId);
+            
+            CreateTable(
+                "dbo.Dispatches",
+                c => new
+                    {
+                        DispatchId = c.Int(nullable: false, identity: true),
+                        DispatchDescription = c.String(),
+                    })
+                .PrimaryKey(t => t.DispatchId);
             
             CreateTable(
                 "dbo.StockStatus",
@@ -133,6 +158,19 @@ namespace Data.Migrations
                         StockStatusDescription = c.String(),
                     })
                 .PrimaryKey(t => t.StockStatusId);
+            
+            CreateTable(
+                "dbo.ProductDescriptions",
+                c => new
+                    {
+                        Product_ProductId = c.Int(nullable: false),
+                        Description_DescriptionId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Product_ProductId, t.Description_DescriptionId })
+                .ForeignKey("dbo.Products", t => t.Product_ProductId, cascadeDelete: true)
+                .ForeignKey("dbo.Descriptions", t => t.Description_DescriptionId, cascadeDelete: true)
+                .Index(t => t.Product_ProductId)
+                .Index(t => t.Description_DescriptionId);
             
             CreateTable(
                 "dbo.ShoppingCartStocks",
@@ -155,25 +193,36 @@ namespace Data.Migrations
             DropForeignKey("dbo.ShoppingCartStocks", "Stock_StockId", "dbo.Stocks");
             DropForeignKey("dbo.ShoppingCartStocks", "ShoppingCart_CartId", "dbo.ShoppingCarts");
             DropForeignKey("dbo.ShoppingCarts", "DispatchId", "dbo.Dispatches");
+            DropForeignKey("dbo.ShoppingCarts", "ClientId", "dbo.Clients");
             DropForeignKey("dbo.Stocks", "ProductId", "dbo.Products");
             DropForeignKey("dbo.Stocks", "LineId", "dbo.Lines");
+            DropForeignKey("dbo.Stocks", "DiscountId", "dbo.Discounts");
             DropForeignKey("dbo.Stocks", "CategorieId", "dbo.Categories");
+            DropForeignKey("dbo.ProductDescriptions", "Description_DescriptionId", "dbo.Descriptions");
+            DropForeignKey("dbo.ProductDescriptions", "Product_ProductId", "dbo.Products");
             DropForeignKey("dbo.Clients", "UserId", "dbo.Users");
             DropIndex("dbo.ShoppingCartStocks", new[] { "Stock_StockId" });
             DropIndex("dbo.ShoppingCartStocks", new[] { "ShoppingCart_CartId" });
+            DropIndex("dbo.ProductDescriptions", new[] { "Description_DescriptionId" });
+            DropIndex("dbo.ProductDescriptions", new[] { "Product_ProductId" });
+            DropIndex("dbo.ShoppingCarts", new[] { "ClientId" });
             DropIndex("dbo.ShoppingCarts", new[] { "DispatchId" });
             DropIndex("dbo.Stocks", new[] { "StockStatusId" });
             DropIndex("dbo.Stocks", new[] { "LineId" });
             DropIndex("dbo.Stocks", new[] { "CategorieId" });
+            DropIndex("dbo.Stocks", new[] { "DiscountId" });
             DropIndex("dbo.Stocks", new[] { "ProductId" });
             DropIndex("dbo.Clients", new[] { "UserId" });
             DropTable("dbo.ShoppingCartStocks");
+            DropTable("dbo.ProductDescriptions");
             DropTable("dbo.StockStatus");
+            DropTable("dbo.Dispatches");
             DropTable("dbo.ShoppingCarts");
+            DropTable("dbo.Lines");
+            DropTable("dbo.Discounts");
             DropTable("dbo.Stocks");
             DropTable("dbo.Products");
-            DropTable("dbo.Lines");
-            DropTable("dbo.Dispatches");
+            DropTable("dbo.Descriptions");
             DropTable("dbo.Users");
             DropTable("dbo.Clients");
             DropTable("dbo.Categories");

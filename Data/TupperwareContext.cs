@@ -27,7 +27,7 @@ namespace Data
         public virtual DbSet<Dispatch> Dispatches { get; set; }
         public virtual DbSet<Line> Lines { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductDescription> ProductDescriptions { get; set; }
+        public virtual DbSet<Description> Descriptions { get; set; }
         public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<Stock> Stock { get; set; }
         public virtual DbSet<StockStatus> StockStatuses { get; set; }

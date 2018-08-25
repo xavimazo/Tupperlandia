@@ -1,4 +1,4 @@
-﻿@model Data.Product
+﻿@model Tupperware_e_commerce.Models.ProductViewModel
 @{
     Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
@@ -6,33 +6,77 @@
     <div class="row wrapper">
         <form class="col s12" action="/Product/Edit" method="post">
             <br />
-            @Html.HiddenFor(x => x.ProductId)
+            @Html.HiddenFor(x => x.Product.ProductId)
             <div class="row">
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.ProductName)
-                    @Html.LabelFor(x => x.ProductName)
+                    @Html.EditorFor(x => x.Product.ProductName)
+                    @Html.LabelFor(x => x.Product.ProductName)
                 </div>
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.ProductComposition)
-                    @Html.LabelFor(x => x.ProductComposition)
+                    @Html.EditorFor(x => x.Product.ProductComposition)
+                    @Html.LabelFor(x => x.Product.ProductComposition)
                 </div>
                 <div class="input-field col s12">
-                    @Html.TextAreaFor(x => x.ShortDescription)
-                    @Html.LabelFor(x => x.ShortDescription)
+                    @Html.TextAreaFor(x => x.Product.ShortDescription)
+                    @Html.LabelFor(x => x.Product.ShortDescription)
                 </div>
                 <div class="input-field col s12">
-                    @Html.TextAreaFor(x => x.FullDescription)
-                    @Html.LabelFor(x => x.FullDescription)
+                    @Html.TextAreaFor(x => x.Product.Recomendations)
+                    @Html.LabelFor(x => x.Product.Recomendations)
                 </div>
-                <div class="input-field col s12">
-                    @Html.TextAreaFor(x => x.Recomendations)
-                    @Html.LabelFor(x => x.Recomendations)
+                <div>
+                    <span class="btn-large"><a data-target="modal1" class="modal-trigger">descripciones</a></span>
                 </div>
                 <div class="input-field col s3">
                     <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">mode_edit</i>Editar</button>
+                </div>
+            </div>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var Description in Model.Description)
+                            {
+                                <tr>
+                                    <td>@Description.DescriptionText</td>
+                                    <td>
+                                        <input type="checkbox" id="@Description.DescriptionId" />
+                                        <label for="@Description.DescriptionId"></label>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </form>
     </div>
 </div>
 
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+        $('.carousel.carousel-slider').carousel({ fullWidth: true });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+        });
+
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+}

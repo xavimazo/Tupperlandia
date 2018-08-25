@@ -1,0 +1,9 @@
+﻿@model Data.Description
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+Esta seguro que desea eliminar la descripcion @Model.DescriptionTitle?
+
+<a href="/Description/DeleteConfirmation/@Model.DescriptionId" class="waves-effect waves-light btn col s6">Eliminar</a>
+<a href="/Description/Index" class="waves-effect waves-light btn col s6">Cancelar</a>

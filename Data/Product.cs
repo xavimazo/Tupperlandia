@@ -19,6 +19,6 @@ namespace Data
         public string Recomendations { get; set; }
 
         public virtual ICollection<Stock> Stock { get; set; }
-        public virtual ICollection<ProductDescription> ProductDescription { get; set; }
+        public virtual ICollection<Description> Description { get; set; }
     }
 }

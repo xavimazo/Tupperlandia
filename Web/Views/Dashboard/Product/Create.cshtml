@@ -1,4 +1,4 @@
-﻿@model Data.Product
+﻿@model Tupperware_e_commerce.Models.ProductViewModel
 @{
     Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
@@ -8,24 +8,8 @@
             <br />
             <div class="row">
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.ProductName)
-                    @Html.LabelFor(x => x.ProductName)
-                </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.ProductComposition)
-                    @Html.LabelFor(x => x.ProductComposition)
-                </div>
-                <div class="input-field col s12">
-                    @Html.TextAreaFor(x => x.ShortDescription)
-                    @Html.LabelFor(x => x.ShortDescription)
-                </div>
-                <div class="input-field col s12">
-                    @Html.TextAreaFor(x => x.FullDescription)
-                    @Html.LabelFor(x => x.FullDescription)
-                </div>
-                <div class="input-field col s12">
-                    @Html.TextAreaFor(x => x.Recomendations)
-                    @Html.LabelFor(x => x.Recomendations)
+                    @Html.EditorFor(x => x.Product.ProductName)
+                    @Html.LabelFor(x => x.Product.ProductName)
                 </div>
                 <div class="input-field col s3">
                     <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">save</i>Guardar producto</button>

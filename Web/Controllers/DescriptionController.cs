@@ -7,24 +7,24 @@ using System.Web.Mvc;
 
 namespace Tupperware_e_commerce.Controllers
 {
-    public class ProductDescriptionController : Controller
+    public class DescriptionController : Controller
     {
         // GET: Product
         public ActionResult Create()
         {
-            var model = new Product();
-            return View("../Dashboard/ProductDescription/Create", model);
+            var model = new Description();
+            return View("../Dashboard/Description/Create", model);
         }
 
         [HttpPost]
-        public ActionResult Create(ProductDescription description)
+        public ActionResult Create(Description description)
         {
             using (var db = new TupperwareContext())
             {
-                if (db.ProductDescriptions.Any(p => p.PDescription == description.PDescription))
-                    throw new Exception("Ya se agrego una descripcion igual");
+                if (db.Descriptions.Any(p => p.DescriptionText == description.DescriptionText))
+                    throw new Exception("Ya se agrego una descripcion");
 
-                db.ProductDescriptions.Add(description);
+                db.Descriptions.Add(description);
                 db.SaveChanges();
             }
 
@@ -38,8 +38,8 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var description = db.ProductDescriptions.Find(id);
-                return View("../Dashboard/ProductDescription/Delete", description);
+                var description = db.Descriptions.Find(id);
+                return View("../Dashboard/Description/Delete", description);
             }
         }
 
@@ -47,8 +47,8 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var descriptionToRemove = db.ProductDescriptions.Find(id);
-                db.ProductDescriptions.Remove(descriptionToRemove);
+                var descriptionToRemove = db.Descriptions.Find(id);
+                db.Descriptions.Remove(descriptionToRemove);
                 db.SaveChanges();
             }
 
@@ -60,17 +60,17 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var description = db.ProductDescriptions.Find(id);
-                return View("../Dashboard/ProductDescription/Edit", description);
+                var description = db.Descriptions.Find(id);
+                return View("../Dashboard/Description/Edit", description);
             }
         }
 
         [HttpPost]
-        public ActionResult Edit(ProductDescription description)
+        public ActionResult Edit(Description description)
         {
             using (var db = new TupperwareContext())
             {
-                var descriptionToEdit = db.ProductDescriptions.Find(description.ProductDescriptionId);
+                var descriptionToEdit = db.Descriptions.Find(description.DescriptionId);
                 db.Entry(descriptionToEdit).CurrentValues.SetValues(description);
                 db.SaveChanges();
             }
@@ -80,14 +80,14 @@ namespace Tupperware_e_commerce.Controllers
 
         public ActionResult Index()
         {
-            var descriptions = new List<Product>();
+            var descriptions = new List<Description>();
 
             using (var db = new TupperwareContext())
             {
-                descriptions = db.Products.ToList();
+                descriptions = db.Descriptions.ToList();
             }
 
-            return View("../Dashboard/ProductDescription/Index", descriptions);
+            return View("../Dashboard/Description/Index", descriptions);
         }
     }
 }

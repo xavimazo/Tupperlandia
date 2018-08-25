@@ -1,0 +1,26 @@
+﻿@model Data.Description
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="container wrapper">
+    <div class="row wrapper">
+        <form class="col s12" action="/Description/Edit" method="post">
+            <br />
+            @Html.HiddenFor(x => x.DescriptionId)
+            <div class="row">
+                <div class="input-field col s3">
+                    @Html.EditorFor(x => x.DescriptionTitle)
+                    @Html.LabelFor(x => x.DescriptionTitle)
+                </div>
+                <div class="input-field col s3">
+                    @Html.EditorFor(x => x.DescriptionText, new { @class = "materialize-textarea" })
+                    @Html.LabelFor(x => x.DescriptionText)
+                </div>
+                <div class="input-field col s3">
+                    <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">mode_edit</i>Editar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

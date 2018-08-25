@@ -75,53 +75,13 @@
     <Compile Include="Discount.cs" />
     <Compile Include="Dispatch.cs" />
     <Compile Include="Line.cs" />
-    <Compile Include="Migrations\201808080222210_x.cs" />
-    <Compile Include="Migrations\201808080222210_x.Designer.cs">
-      <DependentUpon>201808080222210_x.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808080226498_Y.cs" />
-    <Compile Include="Migrations\201808080226498_Y.Designer.cs">
-      <DependentUpon>201808080226498_Y.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808120002175_correccionClient-User.cs" />
-    <Compile Include="Migrations\201808120002175_correccionClient-User.Designer.cs">
-      <DependentUpon>201808120002175_correccionClient-User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808120059379_AddingClientName.cs" />
-    <Compile Include="Migrations\201808120059379_AddingClientName.Designer.cs">
-      <DependentUpon>201808120059379_AddingClientName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808120117372_ChangeInClient.cs" />
-    <Compile Include="Migrations\201808120117372_ChangeInClient.Designer.cs">
-      <DependentUpon>201808120117372_ChangeInClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808120122202_nulleableProperties.cs" />
-    <Compile Include="Migrations\201808120122202_nulleableProperties.Designer.cs">
-      <DependentUpon>201808120122202_nulleableProperties.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808150008426_addingFullDescriptionClass.cs" />
-    <Compile Include="Migrations\201808150008426_addingFullDescriptionClass.Designer.cs">
-      <DependentUpon>201808150008426_addingFullDescriptionClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808150022185_ChangeProductDescriptionName.cs" />
-    <Compile Include="Migrations\201808150022185_ChangeProductDescriptionName.Designer.cs">
-      <DependentUpon>201808150022185_ChangeProductDescriptionName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808160100565_AddingProductDescription.cs" />
-    <Compile Include="Migrations\201808160100565_AddingProductDescription.Designer.cs">
-      <DependentUpon>201808160100565_AddingProductDescription.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808160102282_addingtableproductanddescription.cs" />
-    <Compile Include="Migrations\201808160102282_addingtableproductanddescription.Designer.cs">
-      <DependentUpon>201808160102282_addingtableproductanddescription.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808160142011_tupperwarecontext.cs" />
-    <Compile Include="Migrations\201808160142011_tupperwarecontext.Designer.cs">
-      <DependentUpon>201808160142011_tupperwarecontext.cs</DependentUpon>
+    <Compile Include="Migrations\201808170059454_first.cs" />
+    <Compile Include="Migrations\201808170059454_first.Designer.cs">
+      <DependentUpon>201808170059454_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
-    <Compile Include="ProductDescription.cs" />
+    <Compile Include="Description.cs" />
     <Compile Include="ShoppingCart.cs" />
     <Compile Include="Stock.cs" />
     <Compile Include="StockStatus.cs" />
@@ -134,38 +94,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808080222210_x.resx">
-      <DependentUpon>201808080222210_x.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808080226498_Y.resx">
-      <DependentUpon>201808080226498_Y.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808120002175_correccionClient-User.resx">
-      <DependentUpon>201808120002175_correccionClient-User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808120059379_AddingClientName.resx">
-      <DependentUpon>201808120059379_AddingClientName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808120117372_ChangeInClient.resx">
-      <DependentUpon>201808120117372_ChangeInClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808120122202_nulleableProperties.resx">
-      <DependentUpon>201808120122202_nulleableProperties.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808150008426_addingFullDescriptionClass.resx">
-      <DependentUpon>201808150008426_addingFullDescriptionClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808150022185_ChangeProductDescriptionName.resx">
-      <DependentUpon>201808150022185_ChangeProductDescriptionName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808160100565_AddingProductDescription.resx">
-      <DependentUpon>201808160100565_AddingProductDescription.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808160102282_addingtableproductanddescription.resx">
-      <DependentUpon>201808160102282_addingtableproductanddescription.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808160142011_tupperwarecontext.resx">
-      <DependentUpon>201808160142011_tupperwarecontext.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808170059454_first.resx">
+      <DependentUpon>201808170059454_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
