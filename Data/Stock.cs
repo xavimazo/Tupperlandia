@@ -21,10 +21,10 @@ namespace Data
         public decimal? Height { get; set; }
         [Display(Name = "Diametro")]
         public decimal? Diameter { get; set; }
-        [Display(Name = "Capacidad")]
-        public decimal? Capacity { get; set; }
         [Display(Name = "Cantidad")]
         public int Quantity { get; set; }
+        [Display(Name = "Origen")]
+        public string Origin { get; set; }
         [Display(Name = "Imagen URL")]
         public string Image { get; set; }
 
@@ -40,5 +40,7 @@ namespace Data
         public virtual Line Line { get; set; }
         public int? StockStatusId { get; set; }
         public virtual StockStatus StockStatus { get; set; }
+        public int? CapacityId { get; set; }
+        public virtual Capacity Capacity { get; set; }
     }
 }

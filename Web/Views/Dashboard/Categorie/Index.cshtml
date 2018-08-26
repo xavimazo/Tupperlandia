@@ -1,0 +1,37 @@
+﻿@model IList<Data.Categorie>
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<style type="text/css">
+    .wrapper {
+        padding-left: 300px;
+    }
+</style>
+<div class="container wrapper">
+    <table class="highlight centered wrapper">
+        <br />
+        <div class="center">
+            <a href="/Categorie/Create" class="waves-effect waves-light btn"><i class="material-icons left">category</i>Crear categoria</a>
+        </div>
+        <br />
+        <thead>
+            <tr>
+                <th>ID de categoria</th>
+                <th>Categoria</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Categorie in Model)
+            {
+                <tr>
+                    <td>@Categorie.CategorieId</td>
+                    <td>@Categorie.CategorieDescription</td>
+                    <td><a href="/Categorie/Edit/@Categorie.CategorieId"><i class="small material-icons">mode_edit</i></a></td>
+                    <td><a href="/Categorie/Delete/@Categorie.CategorieId"><i class="small material-icons">delete</i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

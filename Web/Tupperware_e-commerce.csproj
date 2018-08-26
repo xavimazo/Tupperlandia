@@ -142,6 +142,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategorieController.cs" />
+    <Compile Include="Controllers\CapacityController.cs" />
     <Compile Include="Controllers\DiscountController.cs" />
     <Compile Include="Controllers\DescriptionController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -281,10 +283,6 @@
     <Content Include="Views\Dashboard\Stock\Delete.cshtml" />
     <Content Include="Views\Dashboard\Stock\Edit.cshtml" />
     <Content Include="Views\Dashboard\Stock\Create.cshtml" />
-    <Content Include="Views\Dashboard\Sale\Index.cshtml" />
-    <Content Include="Views\Dashboard\Sale\Create.cshtml" />
-    <Content Include="Views\Dashboard\Sale\Edit.cshtml" />
-    <Content Include="Views\Dashboard\Sale\Delete.cshtml" />
     <Content Include="Views\Dashboard\StockStatus\Index.cshtml" />
     <Content Include="Views\Dashboard\StockStatus\Create.cshtml" />
     <Content Include="Views\Dashboard\StockStatus\Delete.cshtml" />
@@ -305,6 +303,14 @@
     <Content Include="Views\Dashboard\Description\Delete.cshtml" />
     <Content Include="Views\Dashboard\Description\Edit.cshtml" />
     <Content Include="Views\Dashboard\Description\Index.cshtml" />
+    <Content Include="Views\Dashboard\Categorie\Create.cshtml" />
+    <Content Include="Views\Dashboard\Categorie\Delete.cshtml" />
+    <Content Include="Views\Dashboard\Categorie\Edit.cshtml" />
+    <Content Include="Views\Dashboard\Categorie\Index.cshtml" />
+    <Content Include="Views\Dashboard\Capacity\Create.cshtml" />
+    <Content Include="Views\Dashboard\Capacity\Delete.cshtml" />
+    <Content Include="Views\Dashboard\Capacity\Edit.cshtml" />
+    <Content Include="Views\Dashboard\Capacity\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,51 +6,67 @@
     <div class="row">
         <form class="col s12" action="/Stock/Edit" method="post">
             <br />
-            @Html.HiddenFor(x => x.Stock.Id)
+            @Html.HiddenFor(x => x.Stock.StockId)
             <div class="row">
                 <div class="col s3">
                     @Html.LabelFor(x => x.Stock.ProductId)
-                    @Html.DropDownListFor(x => x.Stock.ProductId, Model.Products.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.Name }), new { @class = "browser-default" })
+                    @Html.DropDownListFor(x => x.Stock.ProductId, Model.Products.Select(p => new SelectListItem { Value = p.ProductId.ToString(), Text = p.ProductName }), new { @class = "browser-default" })
                 </div>
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.Capacidad)
-                    @Html.LabelFor(x => x.Stock.Capacidad)
+                    @Html.EditorFor(x => x.Stock.Capacity)
+                    @Html.LabelFor(x => x.Stock.Capacity)
                 </div>
                 <div class="input-field col s3">
                     @Html.EditorFor(x => x.Stock.Color)
                     @Html.LabelFor(x => x.Stock.Color)
                 </div>
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.Measurements)
-                    @Html.LabelFor(x => x.Stock.Measurements)
+                    @Html.EditorFor(x => x.Stock.Weight)
+                    @Html.LabelFor(x => x.Stock.Weight)
                 </div>
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.Categorie)
-                    @Html.LabelFor(x => x.Stock.Categorie)
+                    @Html.EditorFor(x => x.Stock.Lenght)
+                    @Html.LabelFor(x => x.Stock.Lenght)
                 </div>
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.Line)
-                    @Html.LabelFor(x => x.Stock.Line)
+                    @Html.EditorFor(x => x.Stock.Width)
+                    @Html.LabelFor(x => x.Stock.Width)
+                </div>
+                <div class="input-field col s3">
+                    @Html.EditorFor(x => x.Stock.Height)
+                    @Html.LabelFor(x => x.Stock.Height)
+                </div>
+                <div class="input-field col s3">
+                    @Html.EditorFor(x => x.Stock.Diameter)
+                    @Html.LabelFor(x => x.Stock.Diameter)
+                </div>
+                <div class="input-field col s3">
+                    @Html.EditorFor(x => x.Stock.Categorie.CategorieDescription)
+                    @Html.LabelFor(x => x.Stock.Categorie.CategorieDescription)
+                </div>
+                <div class="input-field col s3">
+                    @Html.EditorFor(x => x.Stock.Line.LineDescription)
+                    @Html.LabelFor(x => x.Stock.Line.LineDescription)
                 </div>
                 <div class="input-field col s3">
                     @Html.EditorFor(x => x.Stock.Price)
                     @Html.LabelFor(x => x.Stock.Price)
                 </div>
                 <div class="col s3">
-                    @Html.LabelFor(x => x.Stock.StatusId)
-                    @Html.DropDownListFor(x => x.Stock.StatusId, Model.PublicationStatus.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.Status }), new { @class = "browser-default" })
+                    @Html.LabelFor(x => x.Stock.StockStatus.StockStatusId)
+                    @Html.DropDownListFor(x => x.Stock.StockStatus.StockStatusId, Model.StockStatus.Select(p => new SelectListItem { Value = p.StockStatusId.ToString(), Text = p.StockStatusDescription }), new { @class = "browser-default" })
                 </div>
-                <div class="col s3">
-                    @* En caso que la publicacion tenga DESCUENTO, se muestra dropwdown DESCUENTO *@
-                    @if (Model.Stock.Status.Status.Contains("Descuento") || Model.Stock.Status != null)
+                @*<div class="col s3">
+                     En caso que la publicacion tenga DESCUENTO, se muestra dropwdown DESCUENTO 
+                    @if (Model.Stock.StockStatus.StockStatusDescription.Contains("Descuento") || Model.Stock.StockStatus != null)
                     {
-                        @Html.LabelFor(x => x.Stock.percentage)
-                        @Html.DropDownListFor(x => x.Stock.percentage, Model.Discounts.Select(p => new SelectListItem { Value = p.Id.ToString(), Text = p.percentage }), new { @class = "browser-default" })
+                        @Html.LabelFor(x => x.Stock.DiscountId)
+                        @Html.DropDownListFor(x => x.Stock.DiscountId, Model.Stock.Select(p => new SelectListItem { Value = p.DiscountId.ToString(), Text = p.DiscountDescription }), new { @class = "browser-default" })
                     }
-                </div>
+                </div>*@
                 <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.CantidadStock)
-                    @Html.LabelFor(x => x.Stock.CantidadStock)
+                    @Html.EditorFor(x => x.Stock.Quantity)
+                    @Html.LabelFor(x => x.Stock.Quantity)
                 </div>
                 <div class="input-field col s6">
                     @Html.EditorFor(x => x.Stock.Image)

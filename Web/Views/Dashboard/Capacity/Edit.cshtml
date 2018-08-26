@@ -1,0 +1,20 @@
+﻿@model Data.Capacity
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="container">
+    <div class="row wrapper">
+        <form class="col s12" action="/Capacity/Edit" method="post">
+            <br />
+            @Html.HiddenFor(x => x.CapacityId)
+            <div class="row">
+                <div class="input-field col s3">
+                    @Html.EditorFor(x => x.CapacityDescription)
+                    @Html.LabelFor(x => x.CapacityDescription)
+                </div><button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">mode_edit</i>Editar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

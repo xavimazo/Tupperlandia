@@ -72,4 +72,7 @@ C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.dll
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.pdb
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.first.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.a.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.AddingCapacities.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.i.resources
