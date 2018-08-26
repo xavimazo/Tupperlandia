@@ -6,7 +6,7 @@
     <div class="row wrapper">
         <form class="col s12" action="/Product/Edit" method="post">
             <br />
-            @Html.HiddenFor(x => x.Product.ProductId)
+            @Html.HiddenFor(x => x.Product.ProductId, new { name="ProductId" })
             <div class="row">
                 <div class="input-field col s3">
                     @Html.EditorFor(x => x.Product.ProductName)
@@ -31,52 +31,67 @@
                     <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">mode_edit</i>Editar</button>
                 </div>
             </div>
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Descripcion</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var Description in Model.Description)
-                            {
-                                <tr>
-                                    <td>@Description.DescriptionText</td>
-                                    <td>
-                                        <input type="checkbox" id="@Description.DescriptionId" />
-                                        <label for="@Description.DescriptionId"></label>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </form>
     </div>
 </div>
 
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Description in Model.Description)
+                {
+                    <tr>
+                        <td>@Description.DescriptionText</td>
+                        <td>
+                            <input type="checkbox" name="descriptionInput" id="@Description.DescriptionId" />
+                            <label for="@Description.DescriptionId"></label>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <a id="modalSave" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
+    </div>
+</div>
 
 
 @section scripts {
     <script type="text/javascript">
         $(document).ready(function () {
             $('select').material_select();
-        });
-        $(document).ready(function () {
             $('.modal').modal();
-        });
-        $('.carousel.carousel-slider').carousel({ fullWidth: true });
+            $('.sidenav').sideNav();
+            $('.carousel.carousel-slider').carousel({ fullWidth: true });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, options);
-        });
+            $("#modalSave").click(function (e) {
+                var productId = $("#Product_ProductId").val();
 
-        $(document).ready(function () {
-            $('.sidenav').sidenav();
+                var descriptionInputs = $("[name=descriptionInput]");
+                var savedDescriptions = [];
+                descriptionInputs.each(function (i, input) {
+                    if (input.checked) {
+                        savedDescriptions.push($(input).attr("id"));
+                    }
+                });
+
+                $.ajax({
+                    url: "/Product/SaveDescription/" + productId,
+                    data: JSON.stringify(savedDescriptions),
+                    success: function (res) {
+                        console.log("success!");
+                    },
+                    contentType: "application/json",
+                    method: "POST"
+                });
+            })
         });
     </script>
 }

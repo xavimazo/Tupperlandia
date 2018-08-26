@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Tupperware_e_commerce.Models;
@@ -84,7 +85,7 @@ namespace Tupperware_e_commerce.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product, IList<Description> description)
+        public ActionResult Edit(Product product)
         {
             using (var db = new TupperwareContext())
             {
@@ -108,15 +109,26 @@ namespace Tupperware_e_commerce.Controllers
             return View("../Dashboard/Product/Index", products);
         }
 
-        public ActionResult SaveDescription(IList<Description> description, int ProductId)
+        [HttpPost]
+        public ActionResult SaveDescription(int id, int[] descriptions)
         {
             using (var db = new TupperwareContext())
             {
-                var Product = db.Products.Find(ProductId);
-                db.Entry(Product.Description).CurrentValues.SetValues(description);
+                
+                var Product = db.Products.Find(id);
+                Product.Description.Clear();
+
+                foreach (var descriptionId in descriptions)
+                {
+
+                    var description = db.Descriptions.Find(descriptionId);
+
+                    Product.Description.Add(description);
+                }
+                
                 db.SaveChanges();
             }
-            return RedirectToAction("Index");
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
     }
 }
