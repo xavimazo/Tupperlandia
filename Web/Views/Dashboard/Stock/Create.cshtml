@@ -10,11 +10,11 @@
             <div class="row">
                 <div class="col s3">
                     @Html.LabelFor(x => x.Stock.ProductId)
-                    @Html.DropDownListFor(x => x.Stock.ProductId, Model.Products.Select(p => new SelectListItem { Value = p.ProductId.ToString(), Text = p.ProductName }), new { @class = "browser-default" })
+                    @Html.DropDownListFor(x => x.Stock.Product.ProductId, Model.Products.Select(p => new SelectListItem { Value = p.ProductId.ToString(), Text = p.ProductName }), new { @class = "browser-default" })
                 </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.Capacity)
-                    @Html.LabelFor(x => x.Stock.Capacity)
+                <div class="col s3">
+                    @Html.LabelFor(x => x.Stock.Capacity.CapacityId)
+                    @Html.DropDownListFor(x => x.Stock.Capacity.CapacityId, Model.Capacities.Select(p => new SelectListItem { Value = p.CapacityId.ToString(), Text = p.CapacityDescription }), new { @class = "browser-default" })
                 </div>
                 <div class="input-field col s3">
                     @Html.EditorFor(x => x.Stock.Color)
