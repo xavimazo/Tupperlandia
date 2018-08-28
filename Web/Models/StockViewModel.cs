@@ -13,5 +13,7 @@ namespace Tupperware_e_commerce.Models
         public IEnumerable<Categorie> Categories;
         public IEnumerable<Line> Lines;
         public IEnumerable<Capacity> Capacities;
+        public IEnumerable<Color> Colors;
+        public IEnumerable<Origin> Origins;
     }
 }

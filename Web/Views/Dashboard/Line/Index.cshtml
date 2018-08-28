@@ -1,0 +1,32 @@
+﻿@model IList<Data.Line>
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="container wrapper">
+    <table class="highlight centered wrapper">
+        <thead>
+            <br />
+            <div class="center">
+                <a href="/Line/Create" class="waves-effect waves-light btn"><i class="material-icons left">line_style</i>Crear espacho</a>
+            </div>
+            <tr>
+                <th>ID</th>
+                <th>Linea</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Line in Model)
+            {
+                <tr>
+                    <td>@Line.LineId</td>
+                    <td>@Line.LineDescription</td>
+                    <td><a href="/Line/Edit/@Line.LineId"><i class="small material-icons">mode_edit</i></a></td>
+                    <td><a href="/Line/Delete/@Line.LineDescription"><i class="small material-icons">delete</i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

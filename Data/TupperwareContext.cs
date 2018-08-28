@@ -24,10 +24,12 @@ namespace Data
         public virtual DbSet<Capacity> Capacities { get; set; }
         public virtual DbSet<Categorie> Categories { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Color> Colors { get; set; }
         public virtual DbSet<Discount> Discounts { get; set; }
         public virtual DbSet<Dispatch> Dispatches { get; set; }
         public virtual DbSet<Line> Lines { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Origin> Origins { get; set; }
         public virtual DbSet<Description> Descriptions { get; set; }
         public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<Stock> Stock { get; set; }
@@ -36,7 +38,7 @@ namespace Data
 
     }
 
-    //public class MyEntity
+    //public class MyEntitys
     //{
     //    public int Id { get; set; }
     //    public string Name { get; set; }

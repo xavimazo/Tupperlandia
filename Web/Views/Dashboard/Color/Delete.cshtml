@@ -1,0 +1,9 @@
+﻿@model Data.Color
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+Esta seguro que desea eliminar el tipo de entrega @Model.ColorDescription?
+
+<a href="/Color/DeleteConfirmation/@Model.ColorId" class="waves-effect waves-light btn col s6">Eliminar</a>
+<a href="/Color/Index" class="waves-effect waves-light btn col s6">Cancelar</a>

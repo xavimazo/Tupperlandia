@@ -70,11 +70,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Color.cs" />
     <Compile Include="Capacity.cs" />
     <Compile Include="Categorie.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Discount.cs" />
     <Compile Include="Dispatch.cs" />
+    <Compile Include="Migrations\201808282302271_addingOriginAndColorClasses.cs" />
+    <Compile Include="Migrations\201808282302271_addingOriginAndColorClasses.Designer.cs">
+      <DependentUpon>201808282302271_addingOriginAndColorClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Origin.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Migrations\201808170059454_first.cs" />
     <Compile Include="Migrations\201808170059454_first.Designer.cs">
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808262132597_i.resx">
       <DependentUpon>201808262132597_i.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808282302271_addingOriginAndColorClasses.resx">
+      <DependentUpon>201808282302271_addingOriginAndColorClasses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

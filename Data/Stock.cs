@@ -9,8 +9,6 @@ namespace Data
         public int StockId { get; set; }
         [Display(Name = "Precio")]
         public decimal Price { get; set; }
-        [Display(Name = "Color")]
-        public string Color { get; set; }
         [Display(Name = "Peso")]
         public decimal? Weight { get; set; }
         [Display(Name = "Largo")]
@@ -23,8 +21,6 @@ namespace Data
         public decimal? Diameter { get; set; }
         [Display(Name = "Cantidad")]
         public int Quantity { get; set; }
-        [Display(Name = "Origen")]
-        public string Origin { get; set; }
         [Display(Name = "Imagen URL")]
         public string Image { get; set; }
 
@@ -42,5 +38,9 @@ namespace Data
         public virtual StockStatus StockStatus { get; set; }
         public int? CapacityId { get; set; }
         public virtual Capacity Capacity { get; set; }
+        public int? ColorId { get; set; }
+        public virtual Color Color { get; set; }
+        public int? OriginId { get; set; }
+        public virtual Origin Origin { get; set; }
     }
 }

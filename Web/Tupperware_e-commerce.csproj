@@ -142,10 +142,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ColorController.cs" />
     <Compile Include="Controllers\CategorieController.cs" />
     <Compile Include="Controllers\CapacityController.cs" />
     <Compile Include="Controllers\DiscountController.cs" />
     <Compile Include="Controllers\DescriptionController.cs" />
+    <Compile Include="Controllers\LineController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -311,6 +313,14 @@
     <Content Include="Views\Dashboard\Capacity\Delete.cshtml" />
     <Content Include="Views\Dashboard\Capacity\Edit.cshtml" />
     <Content Include="Views\Dashboard\Capacity\Index.cshtml" />
+    <Content Include="Views\Dashboard\Line\Create.cshtml" />
+    <Content Include="Views\Dashboard\Line\Delete.cshtml" />
+    <Content Include="Views\Dashboard\Line\Edit.cshtml" />
+    <Content Include="Views\Dashboard\Line\Index.cshtml" />
+    <Content Include="Views\Dashboard\Color\Create.cshtml" />
+    <Content Include="Views\Dashboard\Color\Delete.cshtml" />
+    <Content Include="Views\Dashboard\Color\Edit.cshtml" />
+    <Content Include="Views\Dashboard\Color\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,21 @@
+﻿@model Data.Color
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="container wrapper">
+    <div class="row wrapper">
+        <form class="col s12" action="/Color/Create" method="post">
+            <br />
+            @Html.HiddenFor(x => x.ColorId)
+            <div class="row">
+                <div class="input-field col s9">
+                    @Html.EditorFor(x => x.ColorDescription)
+                    @Html.LabelFor(x => x.ColorDescription)
+                </div>
+                <div class="input-field col s3">
+                    <button type="submit" class="waves-effect waves-light btn col s6"><i class="material-icons left">save</i>Guardar linea</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

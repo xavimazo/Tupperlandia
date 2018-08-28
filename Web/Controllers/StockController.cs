@@ -28,6 +28,9 @@ namespace Tupperware_e_commerce.Controllers
                 viewModel.Discount = db.Discounts.ToList();
                 viewModel.Categories = db.Categories.ToList();
                 viewModel.Capacities = db.Capacities.ToList();
+                viewModel.Lines = db.Lines.ToList();
+                viewModel.Colors = db.Colors.ToList();
+                viewModel.Origins = db.Origins.ToList();
             }
 
             return View("../Dashboard/Stock/Create", viewModel);
@@ -78,6 +81,8 @@ namespace Tupperware_e_commerce.Controllers
                 var Categorie = db.Categories.ToList();
                 var Lines = db.Lines.ToList();
                 var Capacities = db.Capacities.ToList();
+                var Origins = db.Origins.ToList();
+                var Color = db.Colors.ToList();
 
                 var viewModel = new StockViewModel
                 {
@@ -87,7 +92,9 @@ namespace Tupperware_e_commerce.Controllers
                     Discount = discounts,
                     Categories = Categorie,
                     Lines = Lines,
-                    Capacities = Capacities
+                    Capacities = Capacities,
+                    Colors = Color,
+                    Origins = Origins
                 };
                 return View("../Dashboard/Stock/Edit", viewModel);
             }
@@ -116,6 +123,8 @@ namespace Tupperware_e_commerce.Controllers
                                .Include(s => s.Discount)
                                .Include(S => S.Line)
                                .Include(s => s.Capacity)
+                               .Include(s => s.Color)
+                               .Include(S => S.Origin)
                                .ToList();
             }
             return View("../Dashboard/Stock/Index", stock);

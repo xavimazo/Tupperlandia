@@ -16,9 +16,9 @@
                     @Html.LabelFor(x => x.Stock.Capacity.CapacityId)
                     @Html.DropDownListFor(x => x.Stock.Capacity.CapacityId, Model.Capacities.Select(p => new SelectListItem { Value = p.CapacityId.ToString(), Text = p.CapacityDescription }), new { @class = "browser-default" })
                 </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.Color)
-                    @Html.LabelFor(x => x.Stock.Color)
+                <div class="col s3">
+                    @Html.LabelFor(x => x.Stock.Color.ColorId)
+                    @Html.DropDownListFor(x => x.Stock.Color.ColorId, Model.Colors.Select(p => new SelectListItem { Value = p.ColorId.ToString(), Text = p.ColorDescription }), new { @class = "browser-default" })
                 </div>
                 <div class="input-field col s3">
                     @Html.EditorFor(x => x.Stock.Weight)
@@ -44,9 +44,9 @@
                     @Html.LabelFor(x => x.Stock.Categorie.CategorieId)
                     @Html.DropDownListFor(x => x.Stock.Categorie.CategorieId, Model.Categories.Select(p => new SelectListItem { Value = p.CategorieId.ToString(), Text = p.CategorieDescription }), new { @class = "browser-default"})
                 </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.Stock.Line.LineDescription)
-                    @Html.LabelFor(x => x.Stock.Line.LineDescription)
+                <div class="col s3">
+                    @Html.LabelFor(x => x.Stock.Line.LineId)
+                    @Html.DropDownListFor(x => x.Stock.Line.LineId, Model.Lines.Select(p => new SelectListItem { Value = p.LineId.ToString(), Text = p.LineDescription }), new { @class = "browser-default"})
                 </div>
                 <div class="input-field col s3">
                     @Html.EditorFor(x => x.Stock.Price)
