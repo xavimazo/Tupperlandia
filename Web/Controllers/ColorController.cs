@@ -48,10 +48,16 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var colorToRemove = db.Colors.Find(id);
-                db.Colors.Remove(colorToRemove);
-                db.SaveChanges();
+                try
+                {
+                    db.Colors.Remove(colorToRemove);
+                                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Session["Message"] = "No se puede eliminar";
+                }
             }
-
             return RedirectToAction("Index");
         }
 

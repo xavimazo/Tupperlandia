@@ -47,8 +47,15 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var StatusToRemove = db.StockStatuses.Find(id);
-                db.StockStatuses.Remove(StatusToRemove);
-                db.SaveChanges();
+                try
+                {
+                    db.StockStatuses.Remove(StatusToRemove);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Session["Message"] = "No se puede eliminar";
+                }
             }
             return RedirectToAction("Index");
         }

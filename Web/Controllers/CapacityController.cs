@@ -48,8 +48,15 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var capacityToRemove = db.Capacities.Find(id);
-                db.Capacities.Remove(capacityToRemove);
-                db.SaveChanges();
+                try
+                {
+                    db.Capacities.Remove(capacityToRemove);
+                                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Session["Message"] = "No se puede eliminar";
+                }
             }
 
             return RedirectToAction("Index");

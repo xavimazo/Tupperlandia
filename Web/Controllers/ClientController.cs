@@ -44,8 +44,16 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var ClientToRemove = db.Clients.Find(id);
-                db.Clients.Remove(ClientToRemove);
-                db.SaveChanges();
+                try
+                {
+                    db.Clients.Remove(ClientToRemove);
+                                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Session["Message"] = "No se puede eliminar";
+                }
+
             }
             return RedirectToAction("Index");
         }

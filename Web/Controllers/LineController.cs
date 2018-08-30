@@ -15,7 +15,7 @@ namespace Tupperware_e_commerce.Controllers
         public ActionResult Create()
         {
             var model = new Line();
-             return View("../Dashboard/Line/Create", model);
+            return View("../Dashboard/Line/Create", model);
         }
 
         [HttpPost]
@@ -45,8 +45,15 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var LineToRemove = db.Lines.Find(id);
-                db.Lines.Remove(LineToRemove);
-                db.SaveChanges();
+                try
+                {
+                    db.Lines.Remove(LineToRemove);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Session["Message"] = "No se puede eliminar";
+                }
             }
             return RedirectToAction("Index");
         }

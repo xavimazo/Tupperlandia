@@ -15,7 +15,7 @@ namespace Tupperware_e_commerce.Controllers
         public ActionResult Create()
         {
             var model = new Dispatch();
-             return View("../Dashboard/Dispatch/Create", model);
+            return View("../Dashboard/Dispatch/Create", model);
         }
 
         [HttpPost]
@@ -45,10 +45,17 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var DispatchToRemove = db.Dispatches.Find(id);
-                db.Dispatches.Remove(DispatchToRemove);
-                db.SaveChanges();
+                try
+                {
+                    db.Dispatches.Remove(DispatchToRemove);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Session["Message"] = "No se puede eliminar";
+                }
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
         }
 
         [HttpGet]

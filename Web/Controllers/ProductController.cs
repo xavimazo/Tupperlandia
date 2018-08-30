@@ -60,10 +60,16 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var productToRemove = db.Products.Find(id);
-                db.Products.Remove(productToRemove);
-                db.SaveChanges();
+                try
+                {
+                    db.Products.Remove(productToRemove);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Session["Message"] = "No se puede eliminar";
+                }
             }
-
             return RedirectToAction("Index");
         }
 
@@ -114,7 +120,7 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                
+
                 var Product = db.Products.Find(id);
                 Product.Description.Clear();
 
@@ -125,7 +131,7 @@ namespace Tupperware_e_commerce.Controllers
 
                     Product.Description.Add(description);
                 }
-                
+
                 db.SaveChanges();
             }
             return new HttpStatusCodeResult(HttpStatusCode.OK);

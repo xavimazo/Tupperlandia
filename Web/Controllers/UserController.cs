@@ -46,8 +46,15 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var UserToRemove = db.Users.Find(id);
-                db.Users.Remove(UserToRemove);
-                db.SaveChanges();
+                try
+                {
+                    db.Users.Remove(UserToRemove);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Session["Message"] = "No se puede eliminar";
+                }
             }
             return RedirectToAction("Index");
         }
@@ -64,7 +71,7 @@ namespace Tupperware_e_commerce.Controllers
 
         [HttpPost]
         public ActionResult Edit(User user)
-            {
+        {
             using (var db = new TupperwareContext())
             {
                 var UserToEdit = db.Users.Find(user.UserId);
@@ -81,7 +88,7 @@ namespace Tupperware_e_commerce.Controllers
             {
                 user = db.Users.ToList();
             }
-                return View("../Dashboard/User/Index", user);
+            return View("../Dashboard/User/Index", user);
         }
     }
 }

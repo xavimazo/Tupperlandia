@@ -33,18 +33,16 @@ namespace Tupperware_e_commerce.Controllers
         public ActionResult Delete(int id)
         {
             var Category = new Categorie();
-            try
+
+            using (var db = new TupperwareContext())
             {
-                using (var db = new TupperwareContext())
-                {
-                    Category = db.Categories.Find(id);
-                    
-                }
+                Category = db.Categories.Find(id);
+
             }
-            catch(Exception ex)
-            {
-                Session["Message"] = "No se puede eliminar";
-            }
+
+
+            
+
             return View("../Dashboard/Categorie/Delete", Category);
         }
 
@@ -53,8 +51,15 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var CategorieToRemove = db.Categories.Find(id);
-                db.Categories.Remove(CategorieToRemove);
-                db.SaveChanges();
+                try
+                {
+                    db.Categories.Remove(CategorieToRemove);
+                    db.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    Session["Message"] = "No se puede eliminar";
+                }
             }
             return RedirectToAction("Index");
         }
@@ -88,7 +93,7 @@ namespace Tupperware_e_commerce.Controllers
             {
                 Categorie = db.Categories.ToList();
             }
-                return View("../Dashboard/Categorie/Index", Categorie);
+            return View("../Dashboard/Categorie/Index", Categorie);
         }
     }
 }

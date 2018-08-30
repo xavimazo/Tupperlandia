@@ -120,20 +120,22 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var StockToEdit = db.Stock.Find(stock.StockId);
-                var product = db.Products.Find(stock.Product.ProductId);
-                stock.Product = product;
-                var category = db.Categories.Find(stock.Categorie.CategorieId);
-                stock.Categorie = category;
-                var line = db.Lines.Find(stock.Line.LineId);
-                stock.Line = line;
-                var stockstatus = db.StockStatuses.Find(stock.StockStatus.StockStatusId);
-                stock.StockStatus = stockstatus;
+                stock.StockId = stock.StockId;
+                var product = db.Products.Find(stock.ProductId);
+                stock.ProductId = stock.Product.ProductId;
+                var category = db.Categories.Find(stock.CategorieId);
+                stock.CategorieId = stock.Categorie.CategorieId;
+                var line = db.Lines.Find(stock.LineId);
+                stock.LineId = stock.Line.LineId;
+                var stockstatus = db.StockStatuses.Find(stock.StockStatusId);
+                stock.StockStatusId = stock.StockStatus.StockStatusId;
                 var capacity = db.Capacities.Find(stock.Capacity.CapacityId);
-                stock.Capacity = capacity;
-                var color = db.Colors.Find(stock.Color.ColorId);
-                stock.Color = color;
-                var origin = db.Origins.Find(stock.Origin.OriginId);
-                stock.Origin = origin;
+                stock.CapacityId = stock.Capacity.CapacityId;
+                var color = db.Colors.Find(stock.ColorId);
+                stock.ColorId = stock.Color.ColorId;
+                var origin = db.Origins.Find(stock.OriginId);
+                stock.OriginId = stock.Origin.OriginId;
+
                 db.Entry(StockToEdit).CurrentValues.SetValues(stock);
                 db.SaveChanges();
             }

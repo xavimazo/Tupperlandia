@@ -15,7 +15,7 @@ namespace Tupperware_e_commerce.Controllers
         public ActionResult Create()
         {
             var model = new Origin();
-             return View("../Dashboard/Origin/Create", model);
+            return View("../Dashboard/Origin/Create", model);
         }
 
         [HttpPost]
@@ -45,8 +45,15 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var OriginToRemove = db.Origins.Find(id);
-                db.Origins.Remove(OriginToRemove);
-                db.SaveChanges();
+                try
+                {
+                    db.Origins.Remove(OriginToRemove);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Session["Message"] = "No se puede eliminar";
+                }
             }
             return RedirectToAction("Index");
         }
