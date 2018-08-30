@@ -1,0 +1,9 @@
+﻿@model Data.Origin
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+Esta seguro que desea eliminar el origen @Model.OriginDescription?
+
+<a href="/Origin/DeleteConfirmation/@Model.OriginId" class="waves-effect waves-light btn col s6">Eliminar</a>
+<a href="/Origin/Index" class="waves-effect waves-light btn col s6">Cancelar</a>

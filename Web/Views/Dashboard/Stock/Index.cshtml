@@ -39,7 +39,7 @@
                 <td>@stock.StockId</td>
                 <td>@stock.Product.ProductName</td>
                 <td>@stock.Capacity.CapacityDescription</td>
-                <td>@stock.Color</td>
+                <td>@stock.Color.ColorDescription</td>
                 <td>@stock.Weight</td>
                 <td>@stock.Lenght</td>
                 <td>@stock.Width</td>
@@ -47,6 +47,7 @@
                 <td>@stock.Diameter</td>
                 <td>@stock.Categorie.CategorieDescription</td>
                 <td>@stock.Line.LineDescription</td>
+                <td>@stock.Origin.OriginDescription</td>
                 <td>@stock.Price</td>
                 <td>@(stock.StockStatus.StockStatusDescription != null ? stock.StockStatus.StockStatusDescription : "")</td>
                @* <td>@stock.Discount.DiscountPercentage</td>*@

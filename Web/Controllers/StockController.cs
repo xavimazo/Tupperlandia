@@ -41,6 +41,20 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
+                var product = db.Products.Find(stock.Product.ProductId);
+                stock.Product = product;
+                var category = db.Categories.Find(stock.Categorie.CategorieId);
+                stock.Categorie = category;
+                var line = db.Lines.Find(stock.Line.LineId);
+                stock.Line = line;
+                var stockstatus = db.StockStatuses.Find(stock.StockStatus.StockStatusId);
+                stock.StockStatus = stockstatus;
+                var capacity = db.Capacities.Find(stock.Capacity.CapacityId);
+                stock.Capacity = capacity;
+                var color = db.Colors.Find(stock.Color.ColorId);
+                stock.Color = color;
+                var origin = db.Origins.Find(stock.Origin.OriginId);
+                stock.Origin = origin;
                 db.Stock.Add(stock);
                 db.SaveChanges();
             }
@@ -106,6 +120,20 @@ namespace Tupperware_e_commerce.Controllers
             using (var db = new TupperwareContext())
             {
                 var StockToEdit = db.Stock.Find(stock.StockId);
+                var product = db.Products.Find(stock.Product.ProductId);
+                stock.Product = product;
+                var category = db.Categories.Find(stock.Categorie.CategorieId);
+                stock.Categorie = category;
+                var line = db.Lines.Find(stock.Line.LineId);
+                stock.Line = line;
+                var stockstatus = db.StockStatuses.Find(stock.StockStatus.StockStatusId);
+                stock.StockStatus = stockstatus;
+                var capacity = db.Capacities.Find(stock.Capacity.CapacityId);
+                stock.Capacity = capacity;
+                var color = db.Colors.Find(stock.Color.ColorId);
+                stock.Color = color;
+                var origin = db.Origins.Find(stock.Origin.OriginId);
+                stock.Origin = origin;
                 db.Entry(StockToEdit).CurrentValues.SetValues(stock);
                 db.SaveChanges();
             }

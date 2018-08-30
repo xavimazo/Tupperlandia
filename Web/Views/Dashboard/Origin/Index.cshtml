@@ -1,0 +1,32 @@
+﻿@model IList<Data.Origin>
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="container wrapper">
+    <table class="highlight centered wrapper">
+        <thead>
+            <br />
+            <div class="center">
+                <a href="/Origin/Create" class="waves-effect waves-light btn"><i class="material-icons left">place</i>Crear origen</a>
+            </div>
+            <tr>
+                <th>ID</th>
+                <th>Origen</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Origin in Model)
+            {
+                <tr>
+                    <td>@Origin.OriginId</td>
+                    <td>@Origin.OriginDescription</td>
+                    <td><a href="/Origin/Edit/@Origin.OriginId"><i class="small material-icons">mode_edit</i></a></td>
+                    <td><a href="/Origin/Delete/@Origin.OriginId"><i class="small material-icons">delete</i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

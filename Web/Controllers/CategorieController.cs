@@ -32,11 +32,20 @@ namespace Tupperware_e_commerce.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            using (var db = new TupperwareContext())
+            var Category = new Categorie();
+            try
             {
-                var Categorie = db.Categories.Find(id);
-                return View("../Dashboard/Categorie/Delete", Categorie);
+                using (var db = new TupperwareContext())
+                {
+                    Category = db.Categories.Find(id);
+                    
+                }
             }
+            catch(Exception ex)
+            {
+                Session["Message"] = "No se puede eliminar";
+            }
+            return View("../Dashboard/Categorie/Delete", Category);
         }
 
         public ActionResult DeleteConfirmation(int id)
