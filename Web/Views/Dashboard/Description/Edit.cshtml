@@ -12,8 +12,8 @@
                     @Html.EditorFor(x => x.DescriptionTitle)
                     @Html.LabelFor(x => x.DescriptionTitle)
                 </div>
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.DescriptionText, new { @class = "materialize-textarea" })
+                <div class="input-field col s12">
+                    @Html.TextAreaFor(x => x.DescriptionText, new { @class = "materialize-textarea" })
                     @Html.LabelFor(x => x.DescriptionText)
                 </div>
                 <div class="input-field col s3">

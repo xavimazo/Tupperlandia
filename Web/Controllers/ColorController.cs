@@ -76,8 +76,8 @@ namespace Tupperware_e_commerce.Controllers
         {
             using (var db = new TupperwareContext())
             {
-                var colorToEdit = db.Colors.Find();
-                db.Entry(colorToEdit).CurrentValues.SetValues(color.ColorId);
+                var colorToEdit = db.Colors.Find(color.ColorId);
+                db.Entry(colorToEdit).CurrentValues.SetValues(color);
                 db.SaveChanges();
             }
 

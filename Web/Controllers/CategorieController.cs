@@ -39,10 +39,6 @@ namespace Tupperware_e_commerce.Controllers
                 Category = db.Categories.Find(id);
 
             }
-
-
-            
-
             return View("../Dashboard/Categorie/Delete", Category);
         }
 

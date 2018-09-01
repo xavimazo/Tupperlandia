@@ -76,3 +76,4 @@ C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.a.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.AddingCapacities.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.i.resources
 C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.Migrations.addingOriginAndColorClasses.resources
+C:\Users\xavi_\Documents\Tupperlandia\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
