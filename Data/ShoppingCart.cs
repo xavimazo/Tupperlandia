@@ -7,7 +7,7 @@ namespace Data
     {
         [Key]
         public int CartId { get; set; }
-        [Display(Name = "Unidades vendidas")]
+        [Display(Name = "Monto")]
         public int Amount { get; set; }
         [Display(Name = "Fecha")]
         public string CartDate { get; set; }

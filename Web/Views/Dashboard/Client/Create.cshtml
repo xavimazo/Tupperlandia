@@ -5,12 +5,8 @@
 <div class="container">
     <div class="row wrapper">
         <form class="col s12" action="/Client/Create" method="post">
-            <br />
+            <br />@Html.HiddenFor(x => x.ClientId)
             <div class="row">
-                <div class="input-field col s3">
-                    @Html.EditorFor(x => x.ClientId)
-                    @Html.LabelFor(x => x.ClientId)
-                </div>
                 <div class="input-field col s3">
                     @Html.EditorFor(x => x.ClientName)
                     @Html.LabelFor(x => x.ClientName)

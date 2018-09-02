@@ -9,7 +9,7 @@ namespace Tupperware_e_commerce.Models
 
         public IEnumerable<Stock> Stock;
         //public IEnumerable<Client> Client;
-        public IEnumerable<Product> Products;
+        public IEnumerable<Client> Clients;
         public IEnumerable<Dispatch> Dispatch;
     }
 }

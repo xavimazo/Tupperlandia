@@ -1,9 +1,9 @@
-﻿@model Data.Stock
+﻿@model Data.ShoppingCart
 @{
     Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
-Esta seguro que desea eliminar el producto en stock @Model.ProductId?
+Esta seguro que desea eliminar el producto en stock @Model.CartId?
 
-<a href="/Stock/DeleteConfirmation/@Model.StockId" class="waves-effect waves-light btn col s6">Eliminar</a>
-<a href="/Stock/Index" class="waves-effect waves-light btn col s6">Cancelar</a>
+<a href="/ShoppingCart/DeleteConfirmation/@Model.CartId" class="waves-effect waves-light btn col s6">Eliminar</a>
+<a href="/ShoppingCart/Index" class="waves-effect waves-light btn col s6">Cancelar</a>

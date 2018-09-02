@@ -1,4 +1,4 @@
-﻿@model IList<Data.Stock>
+﻿@model IList<Data.ShoppingCart>
 @{
     Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
@@ -6,58 +6,37 @@
     <table class="highlight centered">
         <br />
         <div class="center">
-            <a href="/Stock/Create" class="waves-effect waves-light btn"><i class="material-icons left">style</i>Crear stock</a>
+            <a href="/ShoppingCart/Create" class="waves-effect waves-light btn"><i class="material-icons left">shopping_cart</i>Crear carrito de ventas</a>
         </div>
         <br />
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Producto</th>
-                <th>Capacidad</th>
-                <th>Color</th>
-                <th>Weight</th>
-                <th>Lenght</th>
-                <th>Width</th>
-                <th>Height</th>
-                <th>Diameter</th>
-                <th>Categoria</th>
-                <th>Linea</th>
-                <th>Origen</th>
-                <th>Precio</th>
-                <th>Estado</th>
-                @*<th>Descuento</th>*@
-                <th>Stock</th>
-                <th>Imagen</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+                @*<th>Stock</th>*@
+                <th>Despacho</th>
+                <th>Cliente</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var stock in Model)
-        {
-            <tr>
-                <td>@stock.StockId</td>
-                <td>@stock.Product.ProductName</td>
-                <td>@stock.Capacity.CapacityDescription</td>
-                <td>@stock.Color.ColorDescription</td>
-                <td>@stock.Weight</td>
-                <td>@stock.Lenght</td>
-                <td>@stock.Width</td>
-                <td>@stock.Height</td>
-                <td>@stock.Diameter</td>
-                <td>@stock.Categorie.CategorieDescription</td>
-                <td>@stock.Line.LineDescription</td>
-                <td>@stock.Origin.OriginDescription</td>
-                <td>@stock.Price</td>
-                <td>@(stock.StockStatus.StockStatusDescription != null ? stock.StockStatus.StockStatusDescription : "")</td>
-               @* <td>@stock.Discount.DiscountPercentage</td>*@
-                <td>@stock.Quantity</td>
-                <td><a href="#!user"><img width="50" height="50" class="circle" src="@stock.Image"></a></td>
-                <td><a href="/Stock/Edit/@stock.StockId"><i class="small material-icons">mode_edit</i></td>
-                <td><a href="/Stock/Delete/@stock.StockId"><i class="small material-icons">delete</i></td>
-                <td><a href="#!user"><img width="50" height="50" class="circle" src="~/Content/ProductsImages/EcoTwist500mlVioleta.jpg"></a></td>
-            </tr>
-    }
+            @foreach (var shoppingCart in Model)
+            {
+                <tr>
+                    <td>@shoppingCart.CartId</td>
+                    <td>@shoppingCart.Amount</td>
+                    <td>@shoppingCart.CartDate</td>
+                    @*<td>@shoppingCart.Stock</td>*@
+                    <td>@shoppingCart.Dispatch.DispatchDescription</td>
+                    <td>@shoppingCart.Client.ClientName</td>
+                    @*<td><a href="#!user"><img width="50" height="50" class="circle" src="@stock.Image"></a></td>*@
+                    <td><a href="/shoppingCart/Edit/@shoppingCart.CartId"><i class="small material-icons">mode_edit</i></td>
+                    <td><a href="/shoppingCart/Delete/@shoppingCart.CartId"><i class="small material-icons">delete</i></td>
+                    <td><a href="#!user"><img width="50" height="50" class="circle" src="~/Content/ProductsImages/EcoTwist500mlVioleta.jpg"></a></td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>

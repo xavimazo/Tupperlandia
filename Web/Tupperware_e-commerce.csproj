@@ -149,6 +149,7 @@
     <Compile Include="Controllers\DescriptionController.cs" />
     <Compile Include="Controllers\OriginController.cs" />
     <Compile Include="Controllers\LineController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -326,6 +327,10 @@
     <Content Include="Views\Dashboard\Origin\Delete.cshtml" />
     <Content Include="Views\Dashboard\Origin\Edit.cshtml" />
     <Content Include="Views\Dashboard\Origin\Index.cshtml" />
+    <Content Include="Views\Dashboard\ShoppingCart\Create.cshtml" />
+    <Content Include="Views\Dashboard\ShoppingCart\Delete.cshtml" />
+    <Content Include="Views\Dashboard\ShoppingCart\Edit.cshtml" />
+    <Content Include="Views\Dashboard\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
